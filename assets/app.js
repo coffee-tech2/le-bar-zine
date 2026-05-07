@@ -5,6 +5,40 @@ let EVENTS = [];
 const CONTRIBUTION_URL = "https://github.com/coffee-tech2/le-bar-zine/issues/new";
 const SUPPORT_URL = "https://github.com/sponsors/coffee-tech2";
 
+function issueUrl(title, body){
+  const params = new URLSearchParams({ title, body });
+  return `${CONTRIBUTION_URL}?${params.toString()}`;
+}
+
+const EVENT_CONTRIBUTION_URL = issueUrl(
+  "Proposer un event",
+  [
+    "Titre :",
+    "Date / heure :",
+    "Lieu :",
+    "Lien source :",
+    "Pourquoi c'est dans l'esprit du Bar Zine :"
+  ].join("\n")
+);
+const BAR_CONTRIBUTION_URL = issueUrl(
+  "Proposer un bar",
+  [
+    "Nom du lieu :",
+    "Quartier :",
+    "Lien officiel / Instagram :",
+    "Pourquoi il mérite une fiche :",
+    "Bon pour :"
+  ].join("\n")
+);
+const CORRECTION_CONTRIBUTION_URL = issueUrl(
+  "Corriger ou compléter une fiche",
+  [
+    "Fiche concernée :",
+    "Info à corriger / ajouter :",
+    "Source :"
+  ].join("\n")
+);
+
 // ─── MOODS CONFIG ────────────────────────────────────────────────────
 // Chaque mood a : clé, label, sous-titre, et mots-clés de matching explicites
 const MOODS = [
@@ -486,7 +520,7 @@ function renderIntroPanel(){
         <p>Concerts, scènes locales, événements associatifs, manifs, appels, lieux alternatifs et formats qui passent souvent sous les radars classiques. L'objectif : rendre visible, sourcer proprement, et relier chaque event à des plans autour.</p>
       </div>
       <div class="panel-actions">
-        <a href="${escapeHtml(CONTRIBUTION_URL)}" target="_blank" rel="noopener">Proposer un event</a>
+        <a href="${escapeHtml(EVENT_CONTRIBUTION_URL)}" target="_blank" rel="noopener">Proposer un event</a>
         <a href="${escapeHtml(SUPPORT_URL)}" target="_blank" rel="noopener">Soutenir le zine</a>
       </div>
     </section>
@@ -534,12 +568,17 @@ function renderSupport(){
         <article>
           <h3>Proposer un event</h3>
           <p>Concert, projection, manif, lecture, expo, soirée, appel ou format local qui mérite d'être relayé.</p>
-          <a href="${escapeHtml(CONTRIBUTION_URL)}" target="_blank" rel="noopener">Soumettre un event →</a>
+          <a href="${escapeHtml(EVENT_CONTRIBUTION_URL)}" target="_blank" rel="noopener">Soumettre un event →</a>
+        </article>
+        <article>
+          <h3>Proposer un bar</h3>
+          <p>Ajouter un lieu lausannois qui colle à l'esprit du radar : utile, vivant, accessible, situé.</p>
+          <a href="${escapeHtml(BAR_CONTRIBUTION_URL)}" target="_blank" rel="noopener">Soumettre un bar →</a>
         </article>
         <article>
           <h3>Compléter une fiche</h3>
           <p>Ajouter une info fiable sur un bar, une programmation, un service, une accessibilité ou une source officielle.</p>
-          <a href="${escapeHtml(CONTRIBUTION_URL)}" target="_blank" rel="noopener">Signaler une info →</a>
+          <a href="${escapeHtml(CORRECTION_CONTRIBUTION_URL)}" target="_blank" rel="noopener">Signaler une info →</a>
         </article>
         <article>
           <h3>Soutenir le zine</h3>
@@ -671,8 +710,23 @@ window.openDetail = function(id){
   const websiteUrl = safeUrl(b.website);
   const instagramUrl = safeUrl(b.instagram);
   const agendaUrl = websiteUrl || instagramUrl || `https://www.google.com/search?q=${encodeURIComponent(b.name+' Lausanne agenda')}`;
-  const completeUrl = `${CONTRIBUTION_URL}?title=${encodeURIComponent('Compléter fiche : '+b.name)}`;
-  const linkedEventUrl = `${CONTRIBUTION_URL}?title=${encodeURIComponent('Proposer un event lié : '+b.name)}`;
+  const completeUrl = issueUrl(
+    `Compléter fiche : ${b.name}`,
+    [
+      `Fiche : ${b.name}`,
+      "Info à ajouter / corriger :",
+      "Source :"
+    ].join("\n")
+  );
+  const linkedEventUrl = issueUrl(
+    `Proposer un event lié : ${b.name}`,
+    [
+      `Lieu lié : ${b.name}`,
+      "Titre de l'event :",
+      "Date / heure :",
+      "Lien source :"
+    ].join("\n")
+  );
 
   // Bloc agenda
   const hasEvents = (b.events||[]).length > 0;

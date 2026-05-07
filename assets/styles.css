@@ -1417,6 +1417,20 @@ input:focus-visible{
   .event-plans > div{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
+@media(max-width:700px){
+  .sortie-strip{
+    display:grid;
+    gap:10px;
+    grid-template-columns:1fr;
+    overflow:visible;
+    padding:0;
+  }
+  .sortie-card{
+    min-height:92px;
+    width:100%;
+  }
+}
+
 @media(max-width:480px){
   .app{padding-left:12px;padding-right:12px}
   .hero h1{font-size:43px}
