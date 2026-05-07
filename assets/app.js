@@ -2,7 +2,7 @@
 let BARS = [];
 let EVENTS = [];
 
-const DATA_VERSION = "20260507-v10";
+const DATA_VERSION = "20260507-v11";
 const CONTRIBUTION_URL = "https://github.com/coffee-tech2/le-bar-zine/issues/new";
 const SUPPORT_URL = "https://github.com/sponsors/coffee-tech2";
 

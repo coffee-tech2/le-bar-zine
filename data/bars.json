@@ -469,6 +469,74 @@
     ]
   },
   {
+    "id": "meraki",
+    "name": "Le Meraki",
+    "area": "Riponne",
+    "type": "bar méditerranéen / jeux",
+    "section": "bars",
+    "tags": [
+      "riponne",
+      "terrasse",
+      "jeux",
+      "mezze",
+      "local"
+    ],
+    "moods": [
+      "verre dehors",
+      "point de ralliement",
+      "coin calme",
+      "jeux de société"
+    ],
+    "best_for": [
+      "verre à Riponne",
+      "jeux de société",
+      "groupe qui veut se poser"
+    ],
+    "avoid_if": [
+      "tu veux une scène musicale",
+      "tu cherches un bar très brut ou militant"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "oui",
+      "pmr": "info prudente",
+      "chauffage": "info prudente"
+    },
+    "music": "musique pas centrale ; lieu plutôt drinks, mezzes et jeux de société",
+    "sound": "moyen",
+    "review_plus": [
+      "terrasse à Riponne",
+      "ludothèque / jeux de société",
+      "boissons suisses et vins du coin indiqués"
+    ],
+    "review_watch": [
+      "plus bar-restaurant que scène culturelle",
+      "ambiance dépendante de l'affluence à Riponne"
+    ],
+    "confidence": "bon",
+    "description": "Un bar méditerranéen à Riponne, utile pour boire un verre, partager des mezzes et sortir les jeux de société. Pas une scène alternative, mais un bon point de ralliement central.",
+    "guide_note": "À garder comme plan utile autour de Riponne : terrasse, groupe, jeux, début de soirée.",
+    "sources": [
+      "site officiel Meraki Lausanne",
+      "Lausanne Tourisme — Le Meraki",
+      "Pive — fiche Le Meraki"
+    ],
+    "events": [],
+    "website": "https://merakilausanne.ch/",
+    "instagram": "",
+    "link_confidence": "bon",
+    "short": "Terrasse, mezzes et jeux à Riponne: bon point de ralliement sans chichi.",
+    "decision_for": [
+      "verre à Riponne",
+      "jeux de société"
+    ],
+    "decision_avoid": [
+      "tu veux une scène musicale",
+      "tu cherches un bar très brut ou militant"
+    ]
+  },
+  {
     "id": "couronne-or",
     "name": "La Couronne d'Or",
     "area": "Marterey",
