@@ -235,40 +235,62 @@ input:focus-visible{
 
 /* ─── DECISION ─── */
 .decision{
+  align-items:center;
+  border-bottom:2px solid var(--ink);
+  border-top:2px solid var(--ink);
   display:grid;
-  grid-template-columns:minmax(0,1fr) 260px;
-  gap:10px;
-  margin:14px 0 0;
+  gap:14px;
+  grid-template-columns:minmax(0,1fr) auto;
+  margin:28px 0 0;
+  padding:14px 0;
 }
 .decision-box{
-  border:2px solid var(--ink);
-  padding:12px;
+  align-items:center;
   background:var(--paper);
+  display:grid;
+  gap:14px;
+  grid-template-columns:auto minmax(0,1fr);
+  min-width:0;
 }
 .decision-box h2{
+  color:var(--red);
   font-family:Inter,ui-sans-serif,system-ui,sans-serif;
   font-weight:900;
-  font-size:18px;
+  font-size:16px;
   line-height:1;
   letter-spacing:.01em;
   text-transform:uppercase;
-  margin:0 0 9px;
+  margin:0;
+  white-space:nowrap;
 }
-.mood-grid{display:flex;flex-wrap:wrap;gap:7px}
+.decision-box h2::after{
+  content:" →";
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+.mood-grid{
+  display:flex;
+  gap:8px;
+  min-width:0;
+  overflow:auto;
+  padding-bottom:1px;
+  scrollbar-width:none;
+}
+.mood-grid::-webkit-scrollbar{display:none}
 .mood-btn{
   border:2px solid var(--ink);
   background:var(--paper);
   text-align:left;
-  padding:8px 10px;
+  padding:8px 12px;
   cursor:pointer;
   font-family:Inter,ui-sans-serif,system-ui,sans-serif;
-  font-weight:800;
+  font-weight:900;
   font-size:13px;
   text-transform:uppercase;
   letter-spacing:.01em;
   transition:background .12s,color .12s;
-  min-height:44px;
-  flex:1 1 150px;
+  min-height:40px;
+  flex:0 0 auto;
+  white-space:nowrap;
 }
 .mood-btn em{
   display:block;
@@ -287,22 +309,22 @@ input:focus-visible{
   border:2px solid var(--ink);
   background:var(--ink);
   color:white;
-  padding:12px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  min-height:0;
+  display:grid;
+  gap:12px;
+  grid-template-columns:auto auto;
+  padding:10px 12px;
+  white-space:nowrap;
 }
 .random-box h2{
   font-family:Inter,ui-sans-serif,system-ui,sans-serif;
-  font-size:25px;
-  line-height:.9;
+  font-size:16px;
+  line-height:1;
   letter-spacing:-.02em;
   text-transform:uppercase;
   font-weight:900;
   font-style:italic;
 }
-.random-box p{color:rgba(255,255,255,.68);line-height:1.35;font-size:12px;margin:7px 0 10px}
+.random-box p{display:none}
 .random-box button{
   border:2px solid white;
   background:white;
@@ -310,12 +332,12 @@ input:focus-visible{
   font-family:Inter,ui-sans-serif,system-ui,sans-serif;
   font-weight:900;
   text-transform:uppercase;
-  font-size:13px;
+  font-size:12px;
   letter-spacing:.02em;
-  padding:10px;
+  padding:8px 10px;
   cursor:pointer;
   transition:background .12s,color .12s;
-  min-height:42px;
+  min-height:36px;
 }
 .random-box button:hover{background:var(--red);color:white;border-color:var(--red)}
 
@@ -1316,17 +1338,21 @@ input:focus-visible{
   }
   .sortie-strip strong{font-size:24px}
   .sortie-strip span{font-size:12px}
-  .decision{grid-template-columns:1fr;margin-top:12px}
-  .decision-box{padding:14px}
-  .decision-box h2{font-size:18px;margin-bottom:10px}
+  .decision{
+    align-items:stretch;
+    grid-template-columns:1fr;
+    margin-top:18px;
+    padding:12px 0;
+  }
+  .decision-box{
+    grid-template-columns:1fr;
+  }
+  .decision-box h2{font-size:16px}
   .mood-grid{
-    display:flex;
     gap:8px;
-    overflow-x:auto;
-    margin:0 -14px;
     padding:0 14px 2px;
+    margin:0 -14px;
     scroll-snap-type:x proximity;
-    scrollbar-width:none;
   }
   .mood-grid::-webkit-scrollbar{display:none}
   .mood-btn{
@@ -1336,13 +1362,10 @@ input:focus-visible{
   }
   .random-box{
     align-items:center;
-    display:grid;
     gap:12px;
     grid-template-columns:1fr auto;
-    padding:13px;
   }
-  .random-box h2{font-size:22px}
-  .random-box p{font-size:13px;margin:8px 0 12px}
+  .random-box h2{font-size:18px}
   .random-box button{white-space:nowrap}
   .controls{
     grid-template-columns:minmax(170px,240px) minmax(0,1fr);
@@ -1438,12 +1461,10 @@ input:focus-visible{
   .mission-grid{margin-left:-12px;margin-right:-12px;padding-left:12px;padding-right:12px}
   .mission-grid article{flex-basis:225px;min-height:126px}
   .decision{gap:10px}
-  .decision-box,
   .random-box{border-width:2px}
   .mood-grid{margin:0 -12px;padding-left:12px;padding-right:12px}
-  .mood-btn{flex-basis:158px;padding:9px}
+  .mood-btn{font-size:12px;padding:8px 10px}
   .random-box{grid-template-columns:1fr}
-  .random-box p{margin-bottom:0}
   .controls{grid-template-columns:1fr;margin:0 -12px;padding-left:12px;padding-right:12px}
   .tonight-strip{margin:0 -12px;padding-left:12px;padding-right:12px}
   .card{grid-template-columns:1fr 44px}

@@ -44,53 +44,53 @@ const CORRECTION_CONTRIBUTION_URL = issueUrl(
 const MOODS = [
   {
     key:"date",
-    label:"Date sans pression",
-    sub:"pas trop bruyant, pas trop bizarre",
+    label:"Avant concert",
+    sub:"boire proche, partir facile",
     keywords:["date","calme","posé","intime","rendez-vous","tranquille"],
     excludeSection:"night",
     preferLow:true // préférer sound bas
   },
   {
     key:"calme",
-    label:"Parler vraiment",
-    sub:"niveau sonore plus doux",
+    label:"Après manif",
+    sub:"débriefer sans forcer",
     keywords:["calme","discussion","posé","tranquille","solo","brunch","parc","café"],
     excludeSection:"night",
     preferLow:true
   },
   {
     key:"apéro",
-    label:"Apéro dehors",
-    sub:"terrasse, lac, extérieur",
+    label:"Verre dehors",
+    sub:"terrasse, lac, trottoir",
     keywords:["apéro","terrasse","extérieur","lac","soleil","parc","dehors"],
     requireTerrace:true
   },
   {
     key:"groupe",
-    label:"Groupe indécis",
-    sub:"central, simple, efficace",
+    label:"Point de ralliement",
+    sub:"central, simple, lisible",
     keywords:["groupe","pub","central","simple","afterwork","bière","food"],
     excludeSection:"night"
   },
   {
     key:"solo",
-    label:"Solo sans malaise",
-    sub:"journée, café, refuge",
+    label:"Coin calme",
+    sub:"parler, lire, souffler",
     keywords:["solo","café","brunch","journée","calme","pause","refuge"],
     excludeSection:"night",
     preferLow:true
   },
   {
     key:"nuit",
-    label:"Finir tard",
-    sub:"club, salle, programmation",
+    label:"Continuer après",
+    sub:"nuit, salle, danse",
     keywords:["nuit","club","concert","danse","tard","musique","sortie"],
     requireSection:"night"
   },
   {
     key:"culture",
-    label:"Culture / concert",
-    sub:"scène locale, prog, musique",
+    label:"Scène locale",
+    sub:"concert, prog, collectif",
     keywords:["culture","concert","musique","scène","programmation","salle"],
     preferSection:"night"
   }
