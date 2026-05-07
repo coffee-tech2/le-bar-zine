@@ -28,7 +28,7 @@ const requiredFields = [
 ];
 
 const requiredServices = ["terrasse", "food", "couvert", "pmr", "chauffage"];
-const validSections = new Set(["bars", "night"]);
+const validSections = new Set(["bars", "night", "venue"]);
 const validConfidence = new Set(["bon", "moyen"]);
 const validLinkConfidence = new Set(["bon", "moyen", "à compléter"]);
 const weakMarkers = ["info prudente", "à compléter", "consolider", "selon source"];

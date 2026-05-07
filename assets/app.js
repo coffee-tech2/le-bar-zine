@@ -2,7 +2,7 @@
 let BARS = [];
 let EVENTS = [];
 
-const DATA_VERSION = "20260507-v11";
+const DATA_VERSION = "20260507-v12";
 const CONTRIBUTION_URL = "https://github.com/coffee-tech2/le-bar-zine/issues/new";
 const SUPPORT_URL = "https://github.com/sponsors/coffee-tech2";
 
@@ -167,6 +167,7 @@ function toggleSave(id, e){
 }
 function isTerrace(b){ return String(b.services.terrasse).startsWith("oui") }
 function isNight(b){ return b.section==="night" }
+function isVenue(b){ return b.section==="venue" }
 function isLow(b){ return b.sound && (b.sound.startsWith("bas") || b.sound === "moyen") }
 function hasWeakMarker(bar){
   const text = JSON.stringify(bar).toLowerCase();
@@ -358,7 +359,8 @@ function nearbyBarsForEvent(event, limit = 5){
       const normalizedTag = normalizeText(tag);
       if(normalizedTag && eventText.includes(normalizedTag)) score += 2;
     });
-    if(!isNight(bar)) score += 1;
+    if(isVenue(bar)) score -= 10;
+    if(!isNight(bar) && !isVenue(bar)) score += 1;
     if(isLow(bar)) score += 1;
 
     return { bar, score };
@@ -371,7 +373,7 @@ function nearbyBarsForEvent(event, limit = 5){
 
 function eventPlanCards(event){
   if(event.status === "ouvert" || event.status === "à compléter") return [];
-  const nearby = nearbyBarsForEvent(event);
+  const nearby = nearbyBarsForEvent(event).filter(bar => !isVenue(bar));
   const drink = nearby.find(bar => !isNight(bar)) || nearby[0];
   const settle = nearby.find(bar => !isNight(bar) && isLow(bar)) || drink;
   const eventText = eventBlob(event);
@@ -488,10 +490,11 @@ function renderPulse(){
   const verifiedEvents = EVENTS.filter(event => event.status === "vérifié").length;
   const recurringEvents = EVENTS.filter(event => event.status === "récurrent").length;
   const nightPlaces = BARS.filter(isNight).length;
+  const venues = BARS.filter(isVenue).length;
   const terracePlaces = BARS.filter(isTerrace).length;
 
   pulseEvents.textContent = `${verifiedEvents} datés · ${recurringEvents} récurrents`;
-  pulseBars.textContent = `${BARS.length} fiches · ${nightPlaces} scènes · ${terracePlaces} terrasses`;
+  pulseBars.textContent = `${BARS.length} fiches · ${nightPlaces} scènes · ${venues} salle${venues>1?'s':''} · ${terracePlaces} terrasses`;
 }
 
 function renderSavedShortcut(){

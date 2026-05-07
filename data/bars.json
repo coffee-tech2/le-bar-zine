@@ -469,6 +469,82 @@
     ]
   },
   {
+    "id": "bruxelles-cafe",
+    "name": "Bruxelles Café",
+    "area": "Riponne",
+    "type": "bar belge / brasserie",
+    "section": "bars",
+    "tags": [
+      "riponne",
+      "bières",
+      "brasserie",
+      "terrasse",
+      "open mic",
+      "dj"
+    ],
+    "moods": [
+      "point de ralliement",
+      "verre dehors",
+      "groupe",
+      "programmation légère"
+    ],
+    "best_for": [
+      "bière à Riponne",
+      "groupe",
+      "open mic ou DJ selon agenda"
+    ],
+    "avoid_if": [
+      "tu veux un lieu discret",
+      "tu veux éviter les diffusions sportives"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "oui",
+      "pmr": "info prudente",
+      "chauffage": "info prudente"
+    },
+    "music": "DJ, concerts et open mic annoncés selon programmation officielle",
+    "sound": "moyen à élevé selon soirée",
+    "review_plus": [
+      "large choix de bières belges",
+      "programmation ponctuelle",
+      "central à Riponne"
+    ],
+    "review_watch": [
+      "bar très passant",
+      "diffusion de matchs selon moments"
+    ],
+    "confidence": "bon",
+    "description": "Bar belge très central à Riponne, utile pour un groupe, une bière, un repas simple ou une soirée avec open mic/DJ selon l'agenda. Pas underground, mais vivant et pratique.",
+    "guide_note": "À garder comme point de ralliement Riponne : grand, lisible, avec programmation ponctuelle.",
+    "sources": [
+      "site officiel Bruxelles Café",
+      "Switzerland Tourism — Bruxelles Café",
+      "Label Fait Maison — Bruxelles Café"
+    ],
+    "events": [
+      {
+        "date": "selon agenda",
+        "title": "DJ, concerts, open mic, quiz et stand-up",
+        "source": "Agenda officiel Bruxelles Café",
+        "url": "https://www.bruxellescafe.ch/"
+      }
+    ],
+    "website": "https://www.bruxellescafe.ch/",
+    "instagram": "https://www.instagram.com/bruxellescafelausanne/",
+    "link_confidence": "bon",
+    "short": "Bière belge, terrasse et prog ponctuelle à Riponne: pratique pour rallier un groupe.",
+    "decision_for": [
+      "bière à Riponne",
+      "groupe"
+    ],
+    "decision_avoid": [
+      "tu veux un lieu discret",
+      "tu veux éviter les diffusions sportives"
+    ]
+  },
+  {
     "id": "meraki",
     "name": "Le Meraki",
     "area": "Riponne",
@@ -1050,15 +1126,16 @@
   },
   {
     "id": "docks",
-    "name": "Les Docks — bar",
+    "name": "Les Docks",
     "area": "Sévelin",
-    "type": "salle de concert / bar",
-    "section": "night",
+    "type": "salle de concert",
+    "section": "venue",
     "tags": [
       "concerts",
       "culture",
       "nuit",
-      "musique live"
+      "musique live",
+      "billetterie"
     ],
     "moods": [
       "concert",
@@ -1066,11 +1143,12 @@
       "musique"
     ],
     "best_for": [
-      "soir de concert",
-      "sortie musicale"
+      "soir de concert avec billet",
+      "programmation musicale"
     ],
     "avoid_if": [
-      "tu veux juste un verre calme"
+      "tu veux juste boire un verre sans billet",
+      "tu cherches un bar ouvert hors concert"
     ],
     "services": {
       "terrasse": "non / info prudente",
@@ -1086,11 +1164,12 @@
       "lieu culturel reconnu"
     ],
     "review_watch": [
-      "à considérer comme lieu de concert, pas bar classique"
+      "à considérer comme salle de concert, pas bar",
+      "événements généralement avec billet"
     ],
     "confidence": "bon",
-    "description": "À mettre à part : ce n'est pas un bar de terrasse, c'est un lieu de concert avec bar. Très utile dans une section nuit / salles.",
-    "guide_note": "Regarder la programmation avant de décider.",
+    "description": "Salle de concert à Sévelin : on y va pour une date précise, souvent avec billet. À utiliser comme repère culturel, pas comme bar où passer boire un verre au hasard.",
+    "guide_note": "Regarder la programmation et la billetterie avant de décider ; pour boire avant, viser plutôt un plan autour comme Base Bar.",
     "sources": [
       "site officiel Les Docks",
       "site officiel / lien vérifié",
@@ -1107,13 +1186,14 @@
     "website": "https://www.docks.ch/",
     "instagram": "https://www.instagram.com/lesdockslausanne/",
     "link_confidence": "bon",
-    "short": "Le bar de concert: utile quand la salle dicte la soiree.",
+    "short": "Salle de concert à billet: repère culturel, pas bar de passage.",
     "decision_for": [
-      "soir de concert",
-      "sortie musicale"
+      "soir de concert avec billet",
+      "programmation musicale"
     ],
     "decision_avoid": [
-      "tu veux juste un verre calme"
+      "tu veux juste boire un verre sans billet",
+      "tu cherches un bar ouvert hors concert"
     ]
   },
   {
