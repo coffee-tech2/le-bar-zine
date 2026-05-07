@@ -2,6 +2,7 @@
 let BARS = [];
 let EVENTS = [];
 
+const DATA_VERSION = "20260507-v10";
 const CONTRIBUTION_URL = "https://github.com/coffee-tech2/le-bar-zine/issues/new";
 const SUPPORT_URL = "https://github.com/sponsors/coffee-tech2";
 
@@ -960,7 +961,8 @@ function render(){
 }
 
 async function loadJson(path){
-  const response = await fetch(path);
+  const separator = path.includes("?") ? "&" : "?";
+  const response = await fetch(`${path}${separator}v=${DATA_VERSION}`);
   if(!response.ok) throw new Error(`Impossible de charger ${path} (${response.status})`);
   return response.json();
 }
