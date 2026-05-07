@@ -1,0 +1,416 @@
+[
+  {
+    "id": "appel-events-underground",
+    "title": "Appel aux events underground",
+    "date_label": "permanent",
+    "area": "Lausanne",
+    "venue": "collectifs, lieux, squats, salles, bars, assos",
+    "category": "appel",
+    "tags": [
+      "concert",
+      "manif",
+      "expo",
+      "dj",
+      "fanzine",
+      "asso"
+    ],
+    "description": "Tu organises une soirée, une manif, une projection, un marché, une lecture, une expo ou un truc pas listé ailleurs ? Le Bar Zine peut le relayer si c'est local, culturel, alternatif ou utile.",
+    "source": "édition Le Bar Zine",
+    "url": "https://github.com/coffee-tech2/le-bar-zine/issues/new",
+    "status": "ouvert"
+  },
+  {
+    "id": "appel-lieux-culture",
+    "title": "Repérage lieux culturels",
+    "date_label": "en construction",
+    "area": "Lausanne et alentours",
+    "venue": "lieux indépendants",
+    "category": "repérage",
+    "tags": [
+      "culture locale",
+      "alternatif",
+      "programmation",
+      "lieux"
+    ],
+    "description": "Cette section servira à remonter les lieux qui font vivre la scène locale : petites salles, collectifs, cafés culturels, ateliers, disquaires, espaces hybrides et adresses qui ne vivent pas seulement d'algorithmes.",
+    "source": "veille éditoriale",
+    "url": "",
+    "status": "à compléter"
+  },
+  {
+    "id": "romandie-eckhart-lesswork-2026-05-07",
+    "title": "ECKHART + LESSWORK",
+    "date_label": "jeu. 07 mai 2026 · 20h00",
+    "area": "Flon",
+    "venue": "Le Romandie",
+    "category": "concert",
+    "tags": [
+      "electro punk",
+      "hyper rock",
+      "vernissage",
+      "local",
+      "romandie"
+    ],
+    "description": "Vernissage d'ECKHART avec LESSWORK en support : une date qui colle bien à l'angle trans-courants, rock tendu et scène régionale.",
+    "source": "Le Romandie — programmation officielle",
+    "url": "https://www.leromandie.ch/event/eckhart-vernissage-ch",
+    "status": "vérifié"
+  },
+  {
+    "id": "romandie-triple-b-olympiens-2026-05-08",
+    "title": "Triple B par les Olympiens",
+    "date_label": "ven. 08 mai 2026 · 23h00",
+    "area": "Flon",
+    "venue": "Le Romandie",
+    "category": "club",
+    "tags": [
+      "house",
+      "trance",
+      "dj set",
+      "collectif",
+      "lausanne"
+    ],
+    "description": "Soirée par Les Olympiens, collectif actif à Lausanne, entre house, progressive et trance.",
+    "source": "Le Romandie — programmation officielle",
+    "url": "https://www.leromandie.ch/event/triple-b-par-les-olympiens",
+    "status": "vérifié"
+  },
+  {
+    "id": "docks-fete-au-village-2026",
+    "title": "Exposition : La Fête au Village",
+    "date_label": "06 mai - 28 juin 2026",
+    "area": "Sévelin",
+    "venue": "Les Docks",
+    "category": "expo",
+    "tags": [
+      "exposition",
+      "vernissage",
+      "docks",
+      "culture locale"
+    ],
+    "description": "Exposition aux Docks, avec vernissage annoncé le 6 mai à 18h30. À garder dans le radar culturel même si ce n'est pas un concert.",
+    "source": "Les Docks — programme officiel",
+    "url": "https://www.docks.ch/programme/",
+    "status": "vérifié"
+  },
+  {
+    "id": "docks-roxane-sorties-relax-2026-05-12",
+    "title": "Roxane — Sorties relax",
+    "date_label": "mar. 12 mai 2026",
+    "area": "Sévelin",
+    "venue": "Les Docks",
+    "category": "concert",
+    "tags": [
+      "concert",
+      "sortie relax",
+      "docks",
+      "accessibilité"
+    ],
+    "description": "Concert annoncé dans le programme des Docks avec format Sorties relax, intéressant pour un agenda qui pense aussi l'accès et le confort.",
+    "source": "Les Docks — programme officiel",
+    "url": "https://www.docks.ch/programme/",
+    "status": "vérifié"
+  },
+  {
+    "id": "romandie-wacken-metal-battle-2026-05-16",
+    "title": "Wacken Metal Battle Switzerland : finale",
+    "date_label": "sam. 16 mai 2026 · 19h00",
+    "area": "Flon",
+    "venue": "Le Romandie",
+    "category": "concert",
+    "tags": [
+      "metal",
+      "finale",
+      "live",
+      "romandie"
+    ],
+    "description": "Finale suisse du Wacken Metal Battle au Romandie. Une date utile pour ne pas réduire l'agenda alternatif aux scènes électroniques.",
+    "source": "Le Romandie — programmation officielle",
+    "url": "https://www.leromandie.ch/event/wacken-metal-battle-switzerland-la-finale",
+    "status": "vérifié"
+  },
+  {
+    "id": "romandie-nnavy-nayana-2026-05-20",
+    "title": "NNAVY Trio + NAYANA",
+    "date_label": "mer. 20 mai 2026 · 20h00",
+    "area": "Flon",
+    "venue": "Le Romandie",
+    "category": "concert",
+    "tags": [
+      "rnb",
+      "soul",
+      "jazz",
+      "neo-soul",
+      "artistes suisses"
+    ],
+    "description": "Plateau R&B, soul, jazz et néo-soul avec NNAVY Trio et NAYANA.",
+    "source": "Le Romandie — programmation officielle",
+    "url": "https://www.leromandie.ch/event/nnavy-trio-ch-support",
+    "status": "vérifié"
+  },
+  {
+    "id": "romandie-ciao-amore-ciao-2026-05-22",
+    "title": "Royale Cattin présente : Ciao Amore Ciao",
+    "date_label": "ven. 22 mai 2026 · 23h00",
+    "area": "Flon",
+    "venue": "Le Romandie",
+    "category": "club",
+    "tags": [
+      "drag",
+      "italo disco",
+      "performance",
+      "queer",
+      "dj set"
+    ],
+    "description": "Soirée Italo Disco avec performances drag et DJ sets, portée par Royale Cattin.",
+    "source": "Le Romandie — programmation officielle",
+    "url": "https://www.leromandie.ch/event/royale-cattin-presente-ciao-amore-ciao",
+    "status": "vérifié"
+  },
+  {
+    "id": "docks-360-fever-2026-05-30",
+    "title": "360° fever x Docks",
+    "date_label": "sam. 30 mai 2026",
+    "area": "Sévelin",
+    "venue": "Les Docks",
+    "category": "club",
+    "tags": [
+      "club",
+      "docks",
+      "soirée",
+      "18+"
+    ],
+    "description": "Soirée 360° fever aux Docks, annoncée 18 ans révolus dans le programme officiel.",
+    "source": "Les Docks — programme officiel",
+    "url": "https://www.docks.ch/programme/",
+    "status": "vérifié"
+  },
+  {
+    "id": "romandie-model-actriz-2026-05-31",
+    "title": "MODEL/ACTRIZ",
+    "date_label": "dim. 31 mai 2026 · 19h30",
+    "area": "Flon",
+    "venue": "Le Romandie",
+    "category": "concert",
+    "tags": [
+      "dance punk",
+      "queer",
+      "live",
+      "romandie"
+    ],
+    "description": "Dance punk queer au Romandie : intensité rock, tension club et énergie physique.",
+    "source": "Le Romandie — programmation officielle",
+    "url": "https://www.leromandie.ch/event/modelactriz-us-support",
+    "status": "vérifié"
+  },
+  {
+    "id": "pride-info-gtbar-2026-05-08",
+    "title": "Lausanne Pride : soirée info / implication",
+    "date_label": "ven. 08 mai 2026 · 18h30",
+    "area": "Tivoli",
+    "venue": "GT's Bar",
+    "category": "rencontre",
+    "tags": [
+      "pride",
+      "queer",
+      "bénévolat",
+      "organisation",
+      "lausanne"
+    ],
+    "description": "Moment ouvert pour découvrir l'organisation de la Lausanne Pride 2026, poser des questions et voir comment s'impliquer.",
+    "source": "Lausanne Pride — programme officiel",
+    "url": "https://www.lausannepride.ch/",
+    "status": "vérifié"
+  },
+  {
+    "id": "bourg-bourgllywood-2026-05-09",
+    "title": "Bourgllywood",
+    "date_label": "sam. 09 mai 2026 · 20h30",
+    "area": "Bourg",
+    "venue": "Le Bourg",
+    "category": "scène",
+    "tags": [
+      "impro",
+      "humour",
+      "performance",
+      "bourg",
+      "lausanne"
+    ],
+    "description": "Doublage improvisé en direct au Bourg : le public choisit des extraits, l'équipe improvise et sonorise.",
+    "source": "Le Programme — saison Le Bourg",
+    "url": "https://leprogramme.ch/programme-de-la-saison/le-bourg",
+    "status": "vérifié"
+  },
+  {
+    "id": "pride-close-t-2026-05-21",
+    "title": "Lecture-performance : CLOSE(T)",
+    "date_label": "jeu. 21 mai 2026 · 19h00",
+    "area": "Montbenon",
+    "venue": "Casino de Montbenon",
+    "category": "performance",
+    "tags": [
+      "pride",
+      "queer",
+      "lecture",
+      "performance",
+      "récits lgbtiq"
+    ],
+    "description": "Adaptation scénique en musique de récits LGBTIQ collectés par le dispositif OUT OF THE BOX de l'Université de Lausanne.",
+    "source": "Lausanne Pride — programme officiel",
+    "url": "https://www.lausannepride.ch/",
+    "status": "vérifié"
+  },
+  {
+    "id": "pride-sante-mentale-queer-2026-05-22",
+    "title": "Table ronde : santé mentale des jeunes queer",
+    "date_label": "ven. 22 mai 2026 · 18h30",
+    "area": "Sous-gare",
+    "venue": "Espace Dickens",
+    "category": "discussion",
+    "tags": [
+      "pride",
+      "queer",
+      "santé mentale",
+      "prévention",
+      "table ronde"
+    ],
+    "description": "Table ronde sur la santé mentale et la prévention du suicide chez les jeunes queer, suivie d'un apéritif dînatoire.",
+    "source": "Lausanne Pride — programme officiel",
+    "url": "https://www.lausannepride.ch/",
+    "status": "vérifié"
+  },
+  {
+    "id": "pride-benevoles-2026-05-27",
+    "title": "Lausanne Pride : séance bénévoles",
+    "date_label": "mer. 27 mai 2026 · 18h30",
+    "area": "Sévelin",
+    "venue": "Espace Spectaculaire Sev52",
+    "category": "rencontre",
+    "tags": [
+      "pride",
+      "bénévolat",
+      "queer",
+      "organisation",
+      "collectif"
+    ],
+    "description": "Séance d'information pour les personnes qui souhaitent être bénévoles à la Lausanne Pride.",
+    "source": "Lausanne Pride — carte / programme officiel",
+    "url": "https://www.lausannepride.ch/carte/",
+    "status": "vérifié"
+  },
+  {
+    "id": "pride-fieres-lectures-humus-2026-05-28",
+    "title": "Fières Lectures 2",
+    "date_label": "jeu. 28 mai 2026 · 18h30",
+    "area": "Terreaux",
+    "venue": "HumuS",
+    "category": "lecture",
+    "tags": [
+      "pride",
+      "queer",
+      "littérature",
+      "lecture",
+      "entrée libre"
+    ],
+    "description": "Lectures d'extraits par Julien Burri et Ed Wige, dans le cycle Fières Lectures.",
+    "source": "Lausanne Pride — programme officiel",
+    "url": "https://www.lausannepride.ch/",
+    "status": "vérifié"
+  },
+  {
+    "id": "pride-burlesque-extravaganza-2026-05-29",
+    "title": "Burlesque Extravaganza",
+    "date_label": "ven. 29 mai 2026 · 19h00",
+    "area": "Chauderon",
+    "venue": "Chauderon 18 / No name",
+    "category": "performance",
+    "tags": [
+      "pride",
+      "burlesque",
+      "queer",
+      "cabaret",
+      "performance"
+    ],
+    "description": "Cabaret burlesque par Misty Lotus Productions, annoncé dans le programme de la Lausanne Pride.",
+    "source": "Lausanne Pride — programme officiel",
+    "url": "https://www.lausannepride.ch/",
+    "status": "vérifié"
+  },
+  {
+    "id": "pride-fieres-lectures-books-2026-05-30",
+    "title": "Fières Lectures 3 — Open Mic",
+    "date_label": "sam. 30 mai 2026 · 18h30",
+    "area": "Valentin",
+    "venue": "Books Books Books",
+    "category": "lecture",
+    "tags": [
+      "pride",
+      "queer",
+      "open mic",
+      "littérature",
+      "english"
+    ],
+    "description": "Open mic de textes queer en anglais, dans le cycle Fières Lectures.",
+    "source": "Lausanne Pride — programme officiel",
+    "url": "https://www.lausannepride.ch/",
+    "status": "vérifié"
+  },
+  {
+    "id": "pride-lausanne-2026",
+    "title": "Lausanne Pride 2026",
+    "date_label": "26-27 juin 2026",
+    "area": "Lausanne",
+    "venue": "Parc de Milan + cortège",
+    "category": "manif",
+    "tags": [
+      "pride",
+      "marche",
+      "queer",
+      "lgbtqia+",
+      "village",
+      "manif"
+    ],
+    "description": "Pride Romande à Lausanne. Village au Parc de Milan les 26 et 27 juin, marche le samedi 27 juin avec rendez-vous annoncé à 14h sous le pont Bessières.",
+    "source": "Lausanne Pride + Lausanne Tourisme",
+    "url": "https://www.lausannepride.ch/la-marche/",
+    "status": "vérifié"
+  },
+  {
+    "id": "espace-autogere-cantine-samedis",
+    "title": "Cantine autogérée",
+    "date_label": "samedis · 12h30-14h30",
+    "area": "César-Roux",
+    "venue": "Espace Autogéré",
+    "category": "cantine",
+    "tags": [
+      "autogéré",
+      "cantine",
+      "prix libre",
+      "anti-marchandise",
+      "collectif"
+    ],
+    "description": "Cantine autogérée annoncée tous les samedis. À garder comme entrée récurrente à surveiller plutôt qu'événement daté unique.",
+    "source": "Espace Autogéré — site officiel",
+    "url": "https://espaceautogere.squat.net/",
+    "status": "récurrent"
+  },
+  {
+    "id": "espace-autogere-chorale-anarchiste",
+    "title": "Chorale anarchiste",
+    "date_label": "un lundi sur deux · 19h00",
+    "area": "César-Roux",
+    "venue": "Espace Autogéré",
+    "category": "atelier",
+    "tags": [
+      "autogéré",
+      "chorale",
+      "anarchiste",
+      "collectif",
+      "anti-autoritaire"
+    ],
+    "description": "Répétition de la chorale anarchiste annoncée par l'Espace Autogéré. Entrée récurrente selon source selon calendrier du moment.",
+    "source": "Espace Autogéré — site officiel",
+    "url": "https://espaceautogere.squat.net/",
+    "status": "récurrent"
+  }
+]

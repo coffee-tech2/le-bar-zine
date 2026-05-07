@@ -1,0 +1,1257 @@
+[
+  {
+    "id": "jetee-compagnie",
+    "name": "La Jetée de la Compagnie",
+    "area": "Bellerive / Ouchy",
+    "type": "buvette au bord du lac",
+    "section": "bars",
+    "tags": [
+      "lac",
+      "extérieur",
+      "été",
+      "apéro"
+    ],
+    "moods": [
+      "apéro au soleil",
+      "groupe d'amis",
+      "date simple"
+    ],
+    "best_for": [
+      "apéro extérieur",
+      "fin de journée",
+      "verre avec vue"
+    ],
+    "avoid_if": [
+      "tu veux un coin très calme",
+      "tu arrives tard un soir de grand beau"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "non",
+      "pmr": "info prudente",
+      "chauffage": "non"
+    },
+    "music": "ambiance extérieure, plutôt fond sonore que lieu musical",
+    "sound": "moyen à élevé aux heures de pointe",
+    "review_plus": [
+      "cadre au bord du lac",
+      "ambiance estivale",
+      "vue et coucher de soleil"
+    ],
+    "review_watch": [
+      "très dépendant de la météo",
+      "peut être très fréquenté quand il fait beau"
+    ],
+    "confidence": "moyen",
+    "description": "Un classique de l'été lausannois : simple, direct, très efficace quand tu veux boire un verre dehors avec le lac en toile de fond. L'expérience dépend beaucoup de la météo et de l'affluence.",
+    "guide_note": "À privilégier pour un verre spontané mais pas trop tardif. Arriver un peu avant le rush change tout.",
+    "sources": [
+      "Lausanne Tourisme — terrasses et rooftops",
+      "Instagram public"
+    ],
+    "events": [
+      {
+        "date": "selon saison / météo",
+        "title": "Activités et soirées extérieures possibles",
+        "source": "Instagram Jetée de la Compagnie",
+        "url": "https://www.instagram.com/jetee_de_la_compagnie/"
+      }
+    ],
+    "instagram": "https://www.instagram.com/jetee_de_la_compagnie/",
+    "website": "",
+    "link_confidence": "bon",
+    "short": "Le spot lac simple et solaire quand Lausanne veut boire dehors.",
+    "decision_for": [
+      "apéro extérieur",
+      "fin de journée"
+    ],
+    "decision_avoid": [
+      "tu veux un coin très calme",
+      "tu arrives tard un soir de grand beau"
+    ]
+  },
+  {
+    "id": "lacustre",
+    "name": "The Lacustre",
+    "area": "Ouchy",
+    "type": "bar-restaurant",
+    "section": "bars",
+    "tags": [
+      "lac",
+      "vue",
+      "brunch",
+      "terrasse"
+    ],
+    "moods": [
+      "date facile",
+      "visiteur à Lausanne",
+      "verre avec vue"
+    ],
+    "best_for": [
+      "premier verre sans risque",
+      "brunch / repas + verre",
+      "vue lac"
+    ],
+    "avoid_if": [
+      "tu veux une adresse confidentielle",
+      "tu cherches un lieu très alternatif"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "partiel / info prudente",
+      "pmr": "info prudente",
+      "chauffage": "info prudente"
+    },
+    "music": "ambiance restaurant/bar, pas centré sur la musique",
+    "sound": "moyen",
+    "review_plus": [
+      "vue lacustre",
+      "côté accessible",
+      "nourriture et boissons dans le même lieu"
+    ],
+    "review_watch": [
+      "peut sembler plus touristique selon les moments",
+      "budget à garder en tête"
+    ],
+    "confidence": "moyen",
+    "description": "Une valeur sûre au bord de l'eau. Ce n'est pas l'adresse la plus secrète, mais c'est lisible, agréable, et pratique quand tu ne veux pas prendre trop de risques.",
+    "guide_note": "Bon choix avec quelqu'un qui ne connaît pas Lausanne.",
+    "sources": [
+      "site officiel / lien vérifié",
+      "Lausanne Guide — terrasses Lausanne"
+    ],
+    "events": [],
+    "website": "https://www.thelacustre.com/",
+    "instagram": "",
+    "link_confidence": "bon",
+    "short": "Valeur sure au bord de l'eau, lisible, facile, pas secrete.",
+    "decision_for": [
+      "premier verre sans risque",
+      "brunch / repas + verre"
+    ],
+    "decision_avoid": [
+      "tu veux une adresse confidentielle",
+      "tu cherches un lieu très alternatif"
+    ]
+  },
+  {
+    "id": "montbenon",
+    "name": "Brasserie de Montbenon",
+    "area": "Montbenon",
+    "type": "brasserie avec terrasse",
+    "section": "bars",
+    "tags": [
+      "vue",
+      "parc",
+      "date",
+      "food"
+    ],
+    "moods": [
+      "date posé",
+      "verre qui devient repas",
+      "vue"
+    ],
+    "best_for": [
+      "moment plus posé",
+      "terrasse avec vue",
+      "rendez-vous"
+    ],
+    "avoid_if": [
+      "tu veux juste une bière rapide",
+      "tu cherches une ambiance très festive"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "non / info prudente",
+      "pmr": "info prudente",
+      "chauffage": "info prudente"
+    },
+    "music": "ambiance brasserie, musique secondaire",
+    "sound": "moyen",
+    "review_plus": [
+      "vue sur le parc / lac / montagnes",
+      "cadre élégant",
+      "terrasse"
+    ],
+    "review_watch": [
+      "plus brasserie que bar pur",
+      "réservation utile selon moment"
+    ],
+    "confidence": "bon",
+    "description": "Un lieu qui donne tout de suite une impression plus posée. Très bien pour un verre qui peut glisser vers un repas, surtout si tu veux un cadre qui fait un peu plus attention.",
+    "guide_note": "Idéal quand tu veux un endroit joli sans aller jusqu'à Ouchy.",
+    "sources": [
+      "Lausanne Tourisme — terrasses ouvertes toute l'année",
+      "site officiel / lien vérifié"
+    ],
+    "events": [],
+    "website": "https://www.brasseriedemontbenon.ch/",
+    "instagram": "",
+    "link_confidence": "bon",
+    "short": "Le plan pose avec vue quand le verre peut devenir soiree.",
+    "decision_for": [
+      "moment plus posé",
+      "terrasse avec vue"
+    ],
+    "decision_avoid": [
+      "tu veux juste une bière rapide",
+      "tu cherches une ambiance très festive"
+    ]
+  },
+  {
+    "id": "cafe-grancy",
+    "name": "Café de Grancy",
+    "area": "Sous-gare",
+    "type": "café-bar / restaurant",
+    "section": "bars",
+    "tags": [
+      "brunch",
+      "chill",
+      "quartier",
+      "discussion"
+    ],
+    "moods": [
+      "discussion longue",
+      "date tranquille",
+      "moment solo"
+    ],
+    "best_for": [
+      "café ou verre posé",
+      "brunch",
+      "rendez-vous pas trop formel"
+    ],
+    "avoid_if": [
+      "tu veux une vraie ambiance de nuit",
+      "tu cherches un bar très bruyant"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "partiel / info prudente",
+      "pmr": "info prudente",
+      "chauffage": "info prudente"
+    },
+    "music": "ambiance café, pas un lieu musical",
+    "sound": "bas à moyen",
+    "review_plus": [
+      "ambiance posée",
+      "brunch / cuisine",
+      "facile pour discuter"
+    ],
+    "review_watch": [
+      "peut être fréquenté aux heures de brunch"
+    ],
+    "confidence": "bon",
+    "description": "Un des choix les plus faciles quand tu veux éviter de te tromper. Ambiance locale, plutôt douce, assez vivante pour ne pas être morte, assez calme pour parler.",
+    "guide_note": "Très bon refuge quand tu hésites.",
+    "sources": [
+      "réputation locale / retours publics à consolider",
+      "site officiel / lien vérifié",
+      "Instagram public"
+    ],
+    "events": [],
+    "website": "https://www.cafedegrancy.ch/",
+    "instagram": "https://www.instagram.com/cafedegrancy/",
+    "link_confidence": "moyen",
+    "short": "Refuge sous-gare pour parler longtemps sans forcer l'ambiance.",
+    "decision_for": [
+      "café ou verre posé",
+      "brunch"
+    ],
+    "decision_avoid": [
+      "tu veux une vraie ambiance de nuit",
+      "tu cherches un bar très bruyant"
+    ]
+  },
+  {
+    "id": "great-escape",
+    "name": "The Great Escape",
+    "area": "Cité / Riponne",
+    "type": "pub",
+    "section": "bars",
+    "tags": [
+      "pub",
+      "bière",
+      "groupe",
+      "terrasse"
+    ],
+    "moods": [
+      "groupe indécis",
+      "afterwork animé",
+      "bière"
+    ],
+    "best_for": [
+      "groupe",
+      "pub mood",
+      "soirée simple"
+    ],
+    "avoid_if": [
+      "tu veux parler au calme",
+      "tu cherches une ambiance intime"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "partiel / info prudente",
+      "pmr": "info prudente",
+      "chauffage": "info prudente"
+    },
+    "music": "ambiance pub, parfois liée aux événements sportifs",
+    "sound": "élevé aux moments d'affluence",
+    "review_plus": [
+      "grande terrasse",
+      "choix de bières",
+      "adapté aux groupes"
+    ],
+    "review_watch": [
+      "peut être bruyant / bondé en soirée"
+    ],
+    "confidence": "bon",
+    "description": "Le pub central qui règle le problème des groupes : tout le monde comprend le concept, personne n'a besoin d'un briefing. La terrasse fait beaucoup pour son intérêt.",
+    "guide_note": "Très utile quand le groupe n'arrive pas à décider.",
+    "sources": [
+      "site officiel / retours publics à consolider",
+      "site officiel / lien vérifié"
+    ],
+    "events": [],
+    "website": "https://the-great.ch/fr/",
+    "instagram": "",
+    "link_confidence": "bon",
+    "short": "Pub central, pratique pour groupes et rendez-vous sans drame.",
+    "decision_for": [
+      "groupe",
+      "pub mood"
+    ],
+    "decision_avoid": [
+      "tu veux parler au calme",
+      "tu cherches une ambiance intime"
+    ]
+  },
+  {
+    "id": "grandes-roches",
+    "name": "Les Grandes Roches",
+    "area": "Riponne / Cité",
+    "type": "terrasse café-restaurant",
+    "section": "bars",
+    "tags": [
+      "terrasse",
+      "central",
+      "été",
+      "spritz"
+    ],
+    "moods": [
+      "apéro central",
+      "terrasse urbaine",
+      "groupe"
+    ],
+    "best_for": [
+      "terrasse en ville",
+      "afterwork",
+      "verre en groupe"
+    ],
+    "avoid_if": [
+      "météo incertaine",
+      "tu veux un lieu très feutré"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "oui / arches",
+      "pmr": "info prudente",
+      "chauffage": "non / saisonnier"
+    },
+    "music": "ambiance terrasse, musique secondaire selon moment",
+    "sound": "moyen à élevé",
+    "review_plus": [
+      "terrasse sous les arches",
+      "centralité",
+      "ambiance estivale"
+    ],
+    "review_watch": [
+      "lié à la météo / saison",
+      "peut être fréquenté"
+    ],
+    "confidence": "bon",
+    "description": "Une des terrasses centrales les plus utiles : elle donne une vraie sensation d'extérieur sans devoir quitter le centre. Très pratique pour un apéro urbain.",
+    "guide_note": "À garder pour les beaux jours et les plans pas trop formels.",
+    "sources": [
+      "site officiel Les Grandes Roches",
+      "site officiel / lien vérifié"
+    ],
+    "events": [],
+    "website": "https://lesgrandesroches.ch/",
+    "instagram": "",
+    "link_confidence": "bon",
+    "short": "Terrasse urbaine a Riponne, brute, directe, efficace.",
+    "decision_for": [
+      "terrasse en ville",
+      "afterwork"
+    ],
+    "decision_avoid": [
+      "météo incertaine",
+      "tu veux un lieu très feutré"
+    ]
+  },
+  {
+    "id": "pavillon",
+    "name": "Pavillon Bar & Kitchen",
+    "area": "Riponne",
+    "type": "bar-kitchen",
+    "section": "bars",
+    "tags": [
+      "cocktail",
+      "dj",
+      "terrasse",
+      "food"
+    ],
+    "moods": [
+      "verre qui peut devenir soirée",
+      "cocktail + food",
+      "date vivant"
+    ],
+    "best_for": [
+      "verre + food",
+      "soirée flexible",
+      "groupe"
+    ],
+    "avoid_if": [
+      "tu veux un lieu très calme",
+      "tu veux juste un café rapide"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "info prudente",
+      "pmr": "info prudente",
+      "chauffage": "info prudente"
+    },
+    "music": "DJ sets annoncés les jeudis, vendredis et samedis ; ambiance variable selon soirée",
+    "sound": "moyen à élevé les soirs avec DJ",
+    "review_plus": [
+      "terrasse",
+      "food / planchettes",
+      "DJ sets et soirée"
+    ],
+    "review_watch": [
+      "ambiance très dépendante du moment",
+      "info prudente selon affluence"
+    ],
+    "confidence": "bon",
+    "description": "Un lieu hybride, utile quand tu ne sais pas encore si tu veux juste boire un verre, grignoter, ou prolonger la soirée. Plus lifestyle que bistrot classique.",
+    "guide_note": "Bon choix pour les plans ouverts : verre maintenant, suite à décider plus tard.",
+    "sources": [
+      "site officiel Pavillon Bar & Kitchen",
+      "site officiel / lien vérifié",
+      "Instagram public"
+    ],
+    "events": [
+      {
+        "date": "selon source",
+        "title": "DJ sets / soirées selon programmation",
+        "source": "Site officiel + Instagram Pavillon",
+        "url": "https://pavillonbar.ch/"
+      }
+    ],
+    "website": "https://pavillonbar.ch/",
+    "instagram": "https://www.instagram.com/pavillonbar/",
+    "link_confidence": "bon",
+    "short": "Plan flexible a Riponne quand verre, food et soiree se melangent.",
+    "decision_for": [
+      "verre + food",
+      "soirée flexible"
+    ],
+    "decision_avoid": [
+      "tu veux un lieu très calme",
+      "tu veux juste un café rapide"
+    ]
+  },
+  {
+    "id": "couronne-or",
+    "name": "La Couronne d'Or",
+    "area": "Marterey",
+    "type": "café historique",
+    "section": "bars",
+    "tags": [
+      "historique",
+      "bière",
+      "local",
+      "terrasse"
+    ],
+    "moods": [
+      "verre simple",
+      "classique lausannois",
+      "afterwork"
+    ],
+    "best_for": [
+      "bière simple",
+      "moment local",
+      "verre sans mise en scène"
+    ],
+    "avoid_if": [
+      "tu veux un cocktail bar design",
+      "tu cherches une ambiance très contemporaine"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "info prudente",
+      "pmr": "partiel / info prudente",
+      "chauffage": "info prudente"
+    },
+    "music": "ambiance café/bar, musique pas centrale",
+    "sound": "moyen",
+    "review_plus": [
+      "côté traditionnel",
+      "ambiance locale",
+      "adresse avec histoire"
+    ],
+    "review_watch": [
+      "moins adapté si tu cherches une expérience très stylisée"
+    ],
+    "confidence": "moyen",
+    "description": "Une adresse qui a plus de vécu que de mise en scène. Bien pour un verre simple, une bière, un moment local sans concept marketing autour.",
+    "guide_note": "À choisir quand tu veux du vrai et du simple.",
+    "sources": [
+      "site officiel / lien vérifié",
+      "Lausanne Tourisme — café historique"
+    ],
+    "events": [],
+    "website": "https://www.couronnedor.ch/",
+    "instagram": "",
+    "link_confidence": "bon",
+    "short": "Biere simple, vibe locale, pas besoin de surjouer.",
+    "decision_for": [
+      "bière simple",
+      "moment local"
+    ],
+    "decision_avoid": [
+      "tu veux un cocktail bar design",
+      "tu cherches une ambiance très contemporaine"
+    ]
+  },
+  {
+    "id": "pin-up",
+    "name": "Pin Up Bar",
+    "area": "Marterey",
+    "type": "bar rétro",
+    "section": "bars",
+    "tags": [
+      "rétro",
+      "cocktail",
+      "soirée",
+      "gay-friendly"
+    ],
+    "moods": [
+      "bar avec identité",
+      "date moins classique",
+      "soirée"
+    ],
+    "best_for": [
+      "cocktails",
+      "sortie avec personnalité",
+      "soirée plus marquée"
+    ],
+    "avoid_if": [
+      "tu veux un lieu très neutre",
+      "tu cherches un café calme"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "snacks / info prudente",
+      "couvert": "arrière chauffé indiqué publiquement",
+      "pmr": "info prudente",
+      "chauffage": "oui / selon source"
+    },
+    "music": "ambiance festive variable selon l'heure et la soirée",
+    "sound": "moyen à élevé",
+    "review_plus": [
+      "identité forte",
+      "bar gay-friendly selon infos publiques",
+      "terrasse / espace extérieur"
+    ],
+    "review_watch": [
+      "ambiance variable selon moment"
+    ],
+    "confidence": "moyen",
+    "description": "Un bar avec une vraie identité, plus marqué qu'un lieu neutre. Intéressant pour une sortie un peu différente, tout en restant à formuler prudemment selon les soirées.",
+    "guide_note": "À tester plutôt en début de soirée si tu veux une approche plus douce.",
+    "sources": [
+      "local.ch / search.ch / Vibes",
+      "site officiel / lien vérifié",
+      "Instagram public"
+    ],
+    "events": [],
+    "instagram": "https://www.instagram.com/pinupbar_/",
+    "website": "https://www.local.ch/fr/d/lausanne/1005/restaurant/pin-up-bar-lmJeZI105smwZLxlZhw8dw",
+    "link_confidence": "bon",
+    "short": "Cocktails et personnalite, plus sortie incarnee que bar neutre.",
+    "decision_for": [
+      "cocktails",
+      "sortie avec personnalité"
+    ],
+    "decision_avoid": [
+      "tu veux un lieu très neutre",
+      "tu cherches un café calme"
+    ]
+  },
+  {
+    "id": "etoile-blanche",
+    "name": "L'Étoile Blanche",
+    "area": "Benjamin-Constant",
+    "type": "bar-restaurant",
+    "section": "bars",
+    "tags": [
+      "afterwork",
+      "soirée",
+      "central",
+      "food"
+    ],
+    "moods": [
+      "afterwork vivant",
+      "groupe",
+      "food + verre"
+    ],
+    "best_for": [
+      "afterwork",
+      "groupe",
+      "verre + repas"
+    ],
+    "avoid_if": [
+      "tu veux un endroit confidentiel",
+      "tu cherches un calme constant"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "partiel / info prudente",
+      "pmr": "info prudente",
+      "chauffage": "info prudente"
+    },
+    "music": "ambiance bar-restaurant, musique secondaire",
+    "sound": "moyen à élevé selon affluence",
+    "review_plus": [
+      "centralité",
+      "food + verre",
+      "ambiance vivante"
+    ],
+    "review_watch": [
+      "peut être fréquenté aux heures fortes"
+    ],
+    "confidence": "moyen",
+    "description": "Pratique, central, vivant. Typiquement le genre d'adresse qui fonctionne quand tu veux boire et manger sans multiplier les plans.",
+    "guide_note": "Bon pour un afterwork simple et flexible.",
+    "sources": [
+      "site officiel / lien vérifié",
+      "Lausanne Tourisme — café historique"
+    ],
+    "events": [],
+    "website": "https://etoileblanche.ch/",
+    "instagram": "",
+    "link_confidence": "bon",
+    "short": "Afterwork central qui reste lisible quand le groupe hesite.",
+    "decision_for": [
+      "afterwork",
+      "groupe"
+    ],
+    "decision_avoid": [
+      "tu veux un endroit confidentiel",
+      "tu cherches un calme constant"
+    ]
+  },
+  {
+    "id": "pointu",
+    "name": "Le Pointu",
+    "area": "Riponne / Centre",
+    "type": "café-brunch",
+    "section": "bars",
+    "tags": [
+      "brunch",
+      "café",
+      "central",
+      "terrasse"
+    ],
+    "moods": [
+      "journée",
+      "date soft",
+      "solo"
+    ],
+    "best_for": [
+      "brunch",
+      "café long",
+      "rendez-vous de journée"
+    ],
+    "avoid_if": [
+      "tu veux une vraie ambiance de nuit"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "info prudente",
+      "pmr": "info prudente",
+      "chauffage": "info prudente"
+    },
+    "music": "ambiance café, pas centrée sur la musique",
+    "sound": "moyen",
+    "review_plus": [
+      "brunch / café",
+      "centralité",
+      "ambiance jeune"
+    ],
+    "review_watch": [
+      "affluence aux heures brunch"
+    ],
+    "confidence": "moyen",
+    "description": "Un café-brunch central qui marche bien pour les rendez-vous de journée. Plus café social que bar du soir.",
+    "guide_note": "À privilégier avant les heures de forte affluence.",
+    "sources": [
+      "site officiel / lien vérifié",
+      "Lausanne Tourisme — café historique"
+    ],
+    "events": [],
+    "website": "https://www.le-pointu.ch/",
+    "instagram": "https://www.instagram.com/lepointulausanne/",
+    "link_confidence": "bon",
+    "short": "Cafe long, brunch, centre-ville: pratique sans devenir froid.",
+    "decision_for": [
+      "brunch",
+      "café long"
+    ],
+    "decision_avoid": [
+      "tu veux une vraie ambiance de nuit"
+    ]
+  },
+  {
+    "id": "folie-voltaire",
+    "name": "La Folie Voltaire",
+    "area": "Parc Mon-Repos",
+    "type": "buvette / café",
+    "section": "bars",
+    "tags": [
+      "parc",
+      "calme",
+      "brunch",
+      "extérieur"
+    ],
+    "moods": [
+      "pause calme",
+      "date journée",
+      "solo"
+    ],
+    "best_for": [
+      "journée",
+      "pause parc",
+      "discussion tranquille"
+    ],
+    "avoid_if": [
+      "mauvais temps",
+      "soirée"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "ombrage naturel",
+      "pmr": "info prudente",
+      "chauffage": "non / saisonnier"
+    },
+    "music": "ambiance parc, musique pas centrale",
+    "sound": "bas à moyen",
+    "review_plus": [
+      "cadre de parc",
+      "calme",
+      "ambiance journée"
+    ],
+    "review_watch": [
+      "météo / saison déterminantes"
+    ],
+    "confidence": "moyen",
+    "description": "Très bon antidote aux bars trop bruyants. On y vient pour respirer, discuter, boire quelque chose et rester dans une ambiance douce.",
+    "guide_note": "Idéal en journée et par beau temps.",
+    "sources": [
+      "site officiel indiqué par Vaud Promotion",
+      "Lausanne Tourisme — ouverture saisonnière"
+    ],
+    "events": [],
+    "website": "https://www.folievoltaire.ch/",
+    "instagram": "",
+    "link_confidence": "moyen",
+    "short": "Pause parc, journee douce, respiration hors du bruit.",
+    "decision_for": [
+      "journée",
+      "pause parc"
+    ],
+    "decision_avoid": [
+      "mauvais temps",
+      "soirée"
+    ]
+  },
+  {
+    "id": "nabi",
+    "name": "Le Nabi",
+    "area": "Plateforme 10 / Gare",
+    "type": "café-restaurant",
+    "section": "bars",
+    "tags": [
+      "culture",
+      "gare",
+      "terrasse",
+      "food"
+    ],
+    "moods": [
+      "culture",
+      "rendez-vous calme",
+      "pause"
+    ],
+    "best_for": [
+      "avant / après expo",
+      "rendez-vous en journée",
+      "pause gare"
+    ],
+    "avoid_if": [
+      "tu veux une ambiance de bar de nuit"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "info prudente",
+      "pmr": "info prudente",
+      "chauffage": "info prudente"
+    },
+    "music": "ambiance café-restaurant, musique secondaire",
+    "sound": "bas à moyen",
+    "review_plus": [
+      "proximité gare / musées",
+      "cadre culturel",
+      "ambiance posée"
+    ],
+    "review_watch": [
+      "moins adapté à une soirée bar"
+    ],
+    "confidence": "moyen",
+    "description": "Un spot utile pour un rendez-vous calme, surtout si tu gravites autour de la gare ou de Plateforme 10.",
+    "guide_note": "Bien pour une pause propre et posée.",
+    "sources": [
+      "retours publics à consolider",
+      "site officiel / lien vérifié"
+    ],
+    "events": [],
+    "website": "https://www.lenabi.ch/",
+    "instagram": "",
+    "link_confidence": "bon",
+    "short": "Le plan Plateforme 10 avant ou apres expo.",
+    "decision_for": [
+      "avant / après expo",
+      "rendez-vous en journée"
+    ],
+    "decision_avoid": [
+      "tu veux une ambiance de bar de nuit"
+    ]
+  },
+  {
+    "id": "tao",
+    "name": "Tao Lounge Bar",
+    "area": "Flon",
+    "type": "bar-restaurant",
+    "section": "bars",
+    "tags": [
+      "cocktail",
+      "asiatique",
+      "soirée",
+      "flon"
+    ],
+    "moods": [
+      "date planifié",
+      "cocktail + repas",
+      "soirée Flon"
+    ],
+    "best_for": [
+      "cocktail + repas",
+      "soirée planifiée",
+      "date"
+    ],
+    "avoid_if": [
+      "tu veux un bar très brut / spontané"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "info prudente",
+      "pmr": "info prudente",
+      "chauffage": "info prudente"
+    },
+    "music": "ambiance lounge, variable selon soirée",
+    "sound": "moyen",
+    "review_plus": [
+      "cocktails",
+      "food",
+      "position au Flon"
+    ],
+    "review_watch": [
+      "ambiance plus structurée que spontanée"
+    ],
+    "confidence": "moyen",
+    "description": "Une option Flon plus cadrée, pratique si tu veux boire et manger dans un même lieu.",
+    "guide_note": "Bon pour un date ou une soirée planifiée.",
+    "sources": [
+      "site officiel / retours publics à consolider",
+      "site officiel / lien vérifié"
+    ],
+    "events": [],
+    "website": "https://www.taoloungebar.ch/terrasse",
+    "instagram": "",
+    "link_confidence": "bon",
+    "short": "Option Flon plus cadree pour boire sans improviser trop fort.",
+    "decision_for": [
+      "cocktail + repas",
+      "soirée planifiée"
+    ],
+    "decision_avoid": [
+      "tu veux un bar très brut / spontané"
+    ]
+  },
+  {
+    "id": "base-bar",
+    "name": "Base Bar",
+    "area": "Sévelin",
+    "type": "bar culturel",
+    "section": "bars",
+    "tags": [
+      "concerts",
+      "culture",
+      "afterwork",
+      "food",
+      "docks",
+      "avant-concert",
+      "sévelin"
+    ],
+    "moods": [
+      "apéro culturel",
+      "concert",
+      "groupe",
+      "avant concert aux Docks",
+      "manger avant live"
+    ],
+    "best_for": [
+      "verre ou repas avant Les Docks",
+      "avant / après événement",
+      "sortie culturelle",
+      "groupe"
+    ],
+    "avoid_if": [
+      "tu veux rester en hyper-centre"
+    ],
+    "services": {
+      "terrasse": "oui",
+      "food": "oui",
+      "couvert": "info prudente",
+      "pmr": "oui / selon source",
+      "chauffage": "info prudente"
+    },
+    "music": "ambiance liée à la scène locale et aux événements",
+    "sound": "moyen à élevé selon programmation",
+    "review_plus": [
+      "très pratique avant un concert aux Docks",
+      "lieu culturel",
+      "proximité concerts",
+      "ambiance locale"
+    ],
+    "review_watch": [
+      "expérience variable selon événement"
+    ],
+    "confidence": "moyen",
+    "description": "Parfait si tu as un concert aux Docks et que tu veux boire un truc ou manger juste avant. C'est un sas culturel de Sévelin : moins carte postale, plus scène locale.",
+    "guide_note": "À garder comme plan pré-Docks : tu te poses, tu manges ou tu bois un verre, puis tu files au concert sans traverser la ville.",
+    "sources": [
+      "Lausanne Tourisme — Base Bar",
+      "pive.ch — horaires et fiche lieu"
+    ],
+    "events": [],
+    "website": "",
+    "instagram": "",
+    "link_confidence": "moyen",
+    "short": "Parfait si tu as un concert aux Docks et que tu veux boire un truc juste avant.",
+    "decision_for": [
+      "verre ou repas avant Les Docks",
+      "avant / après événement"
+    ],
+    "decision_avoid": [
+      "tu veux rester en hyper-centre"
+    ]
+  },
+  {
+    "id": "docks",
+    "name": "Les Docks — bar",
+    "area": "Sévelin",
+    "type": "salle de concert / bar",
+    "section": "night",
+    "tags": [
+      "concerts",
+      "culture",
+      "nuit",
+      "musique live"
+    ],
+    "moods": [
+      "concert",
+      "sortie nuit",
+      "musique"
+    ],
+    "best_for": [
+      "soir de concert",
+      "sortie musicale"
+    ],
+    "avoid_if": [
+      "tu veux juste un verre calme"
+    ],
+    "services": {
+      "terrasse": "non / info prudente",
+      "food": "non",
+      "couvert": "oui",
+      "pmr": "oui / selon source",
+      "chauffage": "non"
+    },
+    "music": "programmation live variable selon les artistes",
+    "sound": "élevé",
+    "review_plus": [
+      "programmation musicale",
+      "lieu culturel reconnu"
+    ],
+    "review_watch": [
+      "à considérer comme lieu de concert, pas bar classique"
+    ],
+    "confidence": "bon",
+    "description": "À mettre à part : ce n'est pas un bar de terrasse, c'est un lieu de concert avec bar. Très utile dans une section nuit / salles.",
+    "guide_note": "Regarder la programmation avant de décider.",
+    "sources": [
+      "site officiel Les Docks",
+      "site officiel / lien vérifié",
+      "Instagram public"
+    ],
+    "events": [
+      {
+        "date": "selon agenda",
+        "title": "Concerts live",
+        "source": "Agenda officiel Les Docks",
+        "url": "https://www.docks.ch/"
+      }
+    ],
+    "website": "https://www.docks.ch/",
+    "instagram": "https://www.instagram.com/lesdockslausanne/",
+    "link_confidence": "bon",
+    "short": "Le bar de concert: utile quand la salle dicte la soiree.",
+    "decision_for": [
+      "soir de concert",
+      "sortie musicale"
+    ],
+    "decision_avoid": [
+      "tu veux juste un verre calme"
+    ]
+  },
+  {
+    "id": "romandie",
+    "name": "Le Romandie",
+    "area": "Flon",
+    "type": "salle / bar",
+    "section": "night",
+    "tags": [
+      "concerts",
+      "culture",
+      "flon",
+      "nuit"
+    ],
+    "moods": [
+      "concert",
+      "culture nuit",
+      "musique"
+    ],
+    "best_for": [
+      "soir de programmation",
+      "musique live"
+    ],
+    "avoid_if": [
+      "tu veux discuter assis tranquillement"
+    ],
+    "services": {
+      "terrasse": "non / info prudente",
+      "food": "non",
+      "couvert": "oui",
+      "pmr": "info prudente",
+      "chauffage": "non"
+    },
+    "music": "scène locale et alternative, variable selon les événements",
+    "sound": "élevé",
+    "review_plus": [
+      "scène locale",
+      "culture nocturne",
+      "concerts"
+    ],
+    "review_watch": [
+      "pas adapté à un verre calme"
+    ],
+    "confidence": "moyen",
+    "description": "Un lieu à classer dans la nuit / culture, pas dans les bars où l'on vient seulement discuter.",
+    "guide_note": "La programmation définit l'expérience.",
+    "sources": [
+      "site officiel / programmation vérifiée",
+      "Lausanne Tourisme — Le Romandie"
+    ],
+    "events": [
+      {
+        "date": "selon agenda",
+        "title": "Concerts / soirées scène locale",
+        "source": "Programmation officielle à consulter",
+        "url": "https://www.leromandie.ch/"
+      }
+    ],
+    "website": "https://www.leromandie.ch/",
+    "instagram": "https://www.instagram.com/leromandie/",
+    "link_confidence": "bon",
+    "short": "Scene locale et alternative, pas un bar de discussion.",
+    "decision_for": [
+      "soir de programmation",
+      "musique live"
+    ],
+    "decision_avoid": [
+      "tu veux discuter assis tranquillement"
+    ]
+  },
+  {
+    "id": "mad",
+    "name": "MAD Club / bar",
+    "area": "Flon",
+    "type": "club",
+    "section": "night",
+    "tags": [
+      "club",
+      "nuit",
+      "danse",
+      "flon"
+    ],
+    "moods": [
+      "danser",
+      "finir tard",
+      "sortie nuit"
+    ],
+    "best_for": [
+      "minuit+",
+      "danser",
+      "club"
+    ],
+    "avoid_if": [
+      "tu veux un verre posé ou une conversation"
+    ],
+    "services": {
+      "terrasse": "non / info prudente",
+      "food": "non",
+      "couvert": "oui",
+      "pmr": "info prudente",
+      "chauffage": "non"
+    },
+    "music": "programmation club variable selon les soirées ; peut inclure commercial, hip-hop ou électronique selon l'événement",
+    "sound": "très élevé",
+    "review_plus": [
+      "club connu",
+      "sortie tardive",
+      "programmation variable"
+    ],
+    "review_watch": [
+      "à ne pas mélanger avec les bars classiques"
+    ],
+    "confidence": "moyen",
+    "description": "Un lieu de nuit, pas un bar de discussion. À garder dans une section séparée pour éviter de brouiller l'expérience.",
+    "guide_note": "Vérifier la soirée avant d'y aller : le style musical dépend fortement de la programmation.",
+    "sources": [
+      "guides nightlife / programmation info prudente",
+      "site officiel / lien vérifié",
+      "Instagram public"
+    ],
+    "events": [
+      {
+        "date": "selon agenda",
+        "title": "Soirées club",
+        "source": "Programmation officielle MAD",
+        "url": "https://www.madclub.ch/"
+      }
+    ],
+    "website": "https://www.madclub.ch/",
+    "instagram": "https://www.instagram.com/madclublausanne/",
+    "link_confidence": "moyen",
+    "short": "Club tardif: danser, pas debattre autour d'un verre.",
+    "decision_for": [
+      "minuit+",
+      "danser"
+    ],
+    "decision_avoid": [
+      "tu veux un verre posé ou une conversation"
+    ]
+  },
+  {
+    "id": "jaggers",
+    "name": "Jagger's",
+    "area": "Rue Etraz",
+    "type": "club / nightlife",
+    "section": "night",
+    "tags": [
+      "rock",
+      "club",
+      "nuit",
+      "danse"
+    ],
+    "moods": [
+      "rock",
+      "nuit",
+      "sortie tard"
+    ],
+    "best_for": [
+      "soirée rock / club",
+      "sortie tardive"
+    ],
+    "avoid_if": [
+      "tu veux un bar calme"
+    ],
+    "services": {
+      "terrasse": "non / info prudente",
+      "food": "non",
+      "couvert": "oui",
+      "pmr": "info prudente",
+      "chauffage": "non"
+    },
+    "music": "particulièrement associé au rock selon Lausanne Tourisme",
+    "sound": "élevé",
+    "review_plus": [
+      "lieu orienté rock",
+      "adresse nightlife connue"
+    ],
+    "review_watch": [
+      "programmation et ambiance variables selon soirée"
+    ],
+    "confidence": "bon",
+    "description": "Un lieu de nuit à part, intéressant si tu veux une catégorie musicale plus claire que \"club générique\".",
+    "guide_note": "À classer en nightlife, pas dans les bars apéro.",
+    "sources": [
+      "Lausanne Tourisme — Jagger's nightlife",
+      "site officiel / lien vérifié",
+      "Instagram public"
+    ],
+    "events": [
+      {
+        "date": "selon agenda",
+        "title": "Soirées club / rock selon programmation",
+        "source": "Lausanne nightlife + réseaux sociaux",
+        "url": "https://www.facebook.com/p/Jaggers-Lausanne-100048828468502/"
+      }
+    ],
+    "instagram": "https://www.instagram.com/jaggerslausanne/",
+    "website": "https://www.lausanne.ch/vie-pratique/culture/vie-nocturne.html",
+    "link_confidence": "moyen",
+    "short": "Nightlife rock, plus fin de soiree que simple apero.",
+    "decision_for": [
+      "soirée rock / club",
+      "sortie tardive"
+    ],
+    "decision_avoid": [
+      "tu veux un bar calme"
+    ]
+  }
+]
