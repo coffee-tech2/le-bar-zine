@@ -1,3 +1,67 @@
+
+// ─── URL STATE ───────────────────────────────────────────────────────
+function pushUrlState(){
+  const params = new URLSearchParams();
+  if(state.tab && state.tab !== "all") params.set("tab", state.tab);
+  if(state.mood) params.set("mood", state.mood);
+  if(state.query) params.set("q", state.query);
+  const newUrl = params.toString()
+    ? `${location.pathname}?${params.toString()}`
+    : location.pathname;
+  history.replaceState(null, "", newUrl);
+}
+
+function readUrlState(){
+  const params = new URLSearchParams(location.search);
+  const tab = params.get("tab");
+  const mood = params.get("mood");
+  const q = params.get("q");
+  const validTabs = ["all","zine","agenda","militant","support","saved"];
+  if(tab && validTabs.includes(tab)) state.tab = tab;
+  if(mood) state.mood = mood;
+  if(q){
+    state.query = q;
+    const input = document.getElementById("searchInput");
+    if(input) input.value = q;
+  }
+}
+
+
+// ─── VALIDATION JSON ─────────────────────────────────────────────────
+function validateBars(bars){
+  const required = ["id","name","area","type","section"];
+  let issues = 0;
+  bars.forEach((b, i) => {
+    required.forEach(field => {
+      if(!b[field]){
+        console.warn(`[Bar Zine] Bar #${i} manque le champ "${field}":`, b);
+        issues++;
+      }
+    });
+    if(!["bars","night"].includes(b.section)){
+      console.warn(`[Bar Zine] Bar "${b.id}" a une section invalide: "${b.section}"`);
+      issues++;
+    }
+  });
+  if(issues === 0) console.info(`[Bar Zine] ${bars.length} bars validés ✓`);
+  else console.warn(`[Bar Zine] ${issues} problème(s) détecté(s) dans bars.json`);
+}
+
+function validateEvents(events){
+  const required = ["id","title","date_label","venue","category"];
+  let issues = 0;
+  events.forEach((e, i) => {
+    required.forEach(field => {
+      if(!e[field]){
+        console.warn(`[Bar Zine] Event #${i} manque le champ "${field}":`, e);
+        issues++;
+      }
+    });
+  });
+  if(issues === 0) console.info(`[Bar Zine] ${events.length} events validés ✓`);
+  else console.warn(`[Bar Zine] ${issues} problème(s) détecté(s) dans events.json`);
+}
+
 // ─── DATA ───────────────────────────────────────────────────────────
 let BARS = [];
 let EVENTS = [];
@@ -618,8 +682,8 @@ function renderGrid(){
     : "Rien ici. Change de mood ou de recherche.";
 
   document.getElementById("grid").innerHTML = data.length
-    ? data.map(b => `
-      <article class="card" onclick="window.openDetail('${barRef(b.id)}')">
+    ? data.map((b, _ci) => `
+      <article class="card" style="animation-delay:${_ci * 40}ms" onclick="window.openDetail('${barRef(b.id)}')">
         <div class="card-left">
           <h2 class="name">${escapeHtml(b.name)}</h2>
           <div class="meta">${escapeHtml(b.area)} · ${escapeHtml(b.type)}</div>
@@ -941,9 +1005,14 @@ window.goPulse = function(target){
   document.getElementById("grid")?.scrollIntoView({ behavior:"smooth", block:"start" });
 };
 
+// Debounce 150ms sur la recherche — évite de recalculer à chaque keystroke
+let _searchTimer = null;
 document.getElementById("searchInput").addEventListener("input", e => {
-  state.query = e.target.value.trim();
-  render();
+  clearTimeout(_searchTimer);
+  _searchTimer = setTimeout(() => {
+    state.query = e.target.value.trim();
+    render();
+  }, 150);
 });
 
 // Fermer modal sur Escape
@@ -961,6 +1030,7 @@ function render(){
   renderControls();
   renderTonightStrip();
   renderGrid();
+  pushUrlState();
 }
 
 async function loadJson(path){
@@ -970,18 +1040,88 @@ async function loadJson(path){
   return response.json();
 }
 
+// ─── SKELETON LOADER ─────────────────────────────────────────────────
+function showSkeleton(){
+  const grid = document.getElementById("grid");
+  if(!grid) return;
+  grid.innerHTML = Array(4).fill(0).map(() => `
+    <div class="card skeleton-card" aria-hidden="true">
+      <div class="card-left">
+        <div class="skel skel-title"></div>
+        <div class="skel skel-meta"></div>
+      </div>
+      <div class="card-body">
+        <div class="skel skel-text"></div>
+        <div class="skel skel-text skel-text--short"></div>
+        <div class="skel skel-tags"></div>
+      </div>
+    </div>
+  `).join("");
+}
+
+// ─── GESTION D'ERREUR AVEC RETRY ─────────────────────────────────────
+function showError(message, canRetry = true){
+  const grid = document.getElementById("grid");
+  if(!grid) return;
+  grid.innerHTML = `
+    <div class="load-error">
+      <div class="load-error-icon">!</div>
+      <p>${message}</p>
+      ${canRetry ? '<button class="load-error-retry" onclick="window.retryInit()">Réessayer →</button>' : ''}
+    </div>
+  `;
+}
+
+let _retryCount = 0;
+window.retryInit = async function(){
+  _retryCount++;
+  if(_retryCount > 3){
+    showError("Toujours pas de connexion. Vérifie ta connexion et recharge la page.", false);
+    return;
+  }
+  showSkeleton();
+  await init();
+};
+
+// ─── CACHE LOCALSTORAGE (TTL 4h) ─────────────────────────────────────
+const CACHE_TTL = 4 * 60 * 60 * 1000; // 4 heures en ms
+
+async function loadWithCache(path, cacheKey){
+  try {
+    const cached = JSON.parse(localStorage.getItem(cacheKey) || "null");
+    if(cached && cached.version === DATA_VERSION && (Date.now() - cached.ts) < CACHE_TTL){
+      return cached.data;
+    }
+  } catch {}
+  // Fetch si pas de cache valide
+  const data = await loadJson(path);
+  try {
+    localStorage.setItem(cacheKey, JSON.stringify({ data, ts: Date.now(), version: DATA_VERSION }));
+  } catch {} // quota dépassé → on continue sans cache
+  return data;
+}
+
 async function init(){
+  showSkeleton();
   try {
     const [bars, events] = await Promise.all([
-      loadJson("data/bars.json"),
-      loadJson("data/events.json")
+      loadWithCache("data/bars.json", "bz_bars"),
+      loadWithCache("data/events.json", "bz_events")
     ]);
     BARS = bars;
     EVENTS = events;
+    validateBars(BARS);
+    validateEvents(EVENTS);
+    _retryCount = 0;
+    readUrlState();
     render();
   } catch(error) {
-    console.error(error);
-    document.getElementById("grid").innerHTML = '<div class="empty">Impossible de charger les données. Lance le site avec un serveur local.</div>';
+    console.error("Init error:", error);
+    const isOffline = !navigator.onLine;
+    const msg = isOffline
+      ? "Tu es hors-ligne. Reconnecte-toi pour charger le radar."
+      : "Impossible de charger les données. Vérifie ta connexion.";
+    showError(msg, true);
   }
 }
 
