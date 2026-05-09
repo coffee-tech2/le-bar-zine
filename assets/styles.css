@@ -41,10 +41,10 @@ input:focus-visible{
   outline-offset:3px;
 }
 
-/* ─── LAYOUT ─── */
+/* â”€â”€â”€ LAYOUT â”€â”€â”€ */
 .app{max-width:1200px;margin:0 auto;padding:24px 20px 100px}
 
-/* ─── HEADER ─── */
+/* â”€â”€â”€ HEADER â”€â”€â”€ */
 .top{
   display:flex;
   justify-content:space-between;
@@ -119,7 +119,7 @@ input:focus-visible{
 .saved-shortcut:focus-visible em,
 .saved-shortcut.active em{color:white}
 
-/* ─── HERO ─── */
+/* â”€â”€â”€ HERO â”€â”€â”€ */
 .hero{padding:42px 0 22px;border-bottom:1px solid var(--ink)}
 .hero h1{
   font-family:Inter,ui-sans-serif,system-ui,sans-serif;
@@ -233,7 +233,7 @@ input:focus-visible{
 .sortie-card.ghost:hover strong,
 .sortie-card.ghost:focus-visible strong{color:white}
 
-/* ─── DECISION ─── */
+/* â”€â”€â”€ DECISION â”€â”€â”€ */
 .decision{
   align-items:center;
   border-bottom:2px solid var(--ink);
@@ -264,7 +264,7 @@ input:focus-visible{
   white-space:nowrap;
 }
 .decision-box h2::after{
-  content:" →";
+  content:" â†’";
   font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
 }
 .mood-grid{
@@ -341,7 +341,7 @@ input:focus-visible{
 }
 .random-box button:hover{background:var(--red);color:white;border-color:var(--red)}
 
-/* ─── CONTROLS ─── */
+/* â”€â”€â”€ CONTROLS â”€â”€â”€ */
 .controls{
   position:sticky;
   top:0;
@@ -399,7 +399,7 @@ input:focus-visible{
 }
 .tab.active{background:var(--red);color:white;border-color:var(--red)}
 
-/* ─── TONIGHT STRIP ─── */
+/* â”€â”€â”€ TONIGHT STRIP â”€â”€â”€ */
 .tonight-strip{
   border-bottom:2px solid var(--ink);
   display:grid;
@@ -458,11 +458,11 @@ input:focus-visible{
 }
 .tonight-card button:hover{color:var(--red)}
 
-/* ─── LAYOUT GRID + SIDEBAR ─── */
+/* â”€â”€â”€ LAYOUT GRID + SIDEBAR â”€â”€â”€ */
 .layout{display:grid;grid-template-columns:1fr 270px;gap:34px;margin-top:26px}
 .grid{border-top:3px solid var(--ink)}
 
-/* ─── CARD ─── */
+/* â”€â”€â”€ CARD â”€â”€â”€ */
 .card{
   display:grid;
   grid-template-columns:minmax(180px,230px) 1fr 52px;
@@ -590,7 +590,7 @@ input:focus-visible{
 }
 .save-btn.saved{background:var(--red);color:white;border-color:var(--red)}
 
-/* ─── SIDEBAR ─── */
+/* â”€â”€â”€ SIDEBAR â”€â”€â”€ */
 .side{
   position:sticky;
   top:120px;
@@ -630,7 +630,7 @@ input:focus-visible{
   margin-top:3px;
 }
 
-/* ─── EMPTY ─── */
+/* â”€â”€â”€ EMPTY â”€â”€â”€ */
 .empty{
   border:2px solid var(--ink);
   padding:32px;
@@ -644,7 +644,7 @@ input:focus-visible{
   margin-top:2px;
 }
 
-/* ─── DETAIL (fiche bar) ─── */
+/* â”€â”€â”€ DETAIL (fiche bar) â”€â”€â”€ */
 .detail{
   display:none;
   position:fixed;
@@ -823,7 +823,7 @@ input:focus-visible{
 }
 .fold summary::-webkit-details-marker{display:none}
 .fold summary::after{content:"+";color:var(--red);font-size:22px;line-height:1}
-.fold[open] summary::after{content:"–"}
+.fold[open] summary::after{content:"â€“"}
 .fold-content{padding:0 0 16px}
 
 .sections{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -989,7 +989,7 @@ input:focus-visible{
 .cta a:first-child{background:var(--red);color:white;border-color:var(--red)}
 .cta a:first-child:hover{background:var(--red2)}
 
-/* ─── PICK MODAL ─── */
+/* â”€â”€â”€ PICK MODAL â”€â”€â”€ */
 .pick-modal{
   display:none;
   position:fixed;
@@ -1085,7 +1085,7 @@ input:focus-visible{
   font-weight:700;
 }
 
-/* ─── CONFIDENCE BADGE ─── */
+/* â”€â”€â”€ CONFIDENCE BADGE â”€â”€â”€ */
 .confidence{
   display:inline-block;
   font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -1098,7 +1098,7 @@ input:focus-visible{
 .confidence.bon{color:#2a7a3a;background:rgba(42,122,58,.08)}
 .confidence.moyen{color:#8a6a10;background:rgba(138,106,16,.08)}
 
-/* ─── AGENDA + SUPPORT ─── */
+/* â”€â”€â”€ AGENDA + SUPPORT â”€â”€â”€ */
 .zine-panel,
 .support-board{
   border-bottom:3px solid var(--ink);
@@ -1290,7 +1290,105 @@ input:focus-visible{
 }
 .support-options p{font-size:14px;color:#332e29}
 
-/* ─── RESPONSIVE ─── */
+/* â”€â”€â”€ RESPONSIVE â”€â”€â”€ */
+
+/* â”€â”€â”€ SKELETON LOADER â”€â”€â”€ */
+.skeleton-card{
+  pointer-events:none;
+  cursor:default;
+  opacity:.7;
+}
+.skel{
+  background:linear-gradient(90deg, var(--soft) 25%, var(--paper-dark) 50%, var(--soft) 75%);
+  background-size:200% 100%;
+  animation:skel-shimmer 1.4s ease-in-out infinite;
+  border-radius:1px;
+}
+@keyframes skel-shimmer{
+  0%{background-position:200% 0}
+  100%{background-position:-200% 0}
+}
+.skel-title{height:28px;width:80%;margin-bottom:8px}
+.skel-meta{height:12px;width:55%}
+.skel-text{height:14px;width:100%;margin-bottom:6px}
+.skel-text--short{width:65%}
+.skel-tags{height:22px;width:70%;margin-top:8px}
+
+/* â”€â”€â”€ ERREUR / RETRY â”€â”€â”€ */
+.load-error{
+  border:2px solid var(--ink);
+  padding:32px 24px;
+  text-align:center;
+  margin:4px 0;
+}
+.load-error-icon{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:28px;
+  font-weight:900;
+  color:var(--red);
+  border:3px solid var(--red);
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 16px;
+}
+.load-error p{
+  font-size:15px;
+  line-height:1.45;
+  color:#322d28;
+  margin-bottom:18px;
+  max-width:400px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.load-error-retry{
+  border:2px solid var(--ink);
+  background:var(--ink);
+  color:white;
+  padding:10px 18px;
+  font-family:inherit;
+  font-weight:700;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  cursor:pointer;
+  transition:background .1s;
+}
+.load-error-retry:hover{background:var(--red);border-color:var(--red)}
+
+/* â”€â”€â”€ BADGE OUVERT qui pulse â”€â”€â”€ */
+.status-open-pulse{
+  animation:pulse-open 2s ease-in-out infinite;
+}
+@keyframes pulse-open{
+  0%,100%{opacity:1}
+  50%{opacity:.55}
+}
+
+
+/* â”€â”€â”€ STAGGER ANIMATION CARDS â”€â”€â”€ */
+@keyframes card-in{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.card{
+  animation:card-in .25s ease both;
+}
+
+/* â”€â”€â”€ BADGE OUVERT PULSE â”€â”€â”€ */
+.status-open-pulse{
+  animation:pulse-open 2.5s ease-in-out infinite;
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+}
+@keyframes pulse-open{
+  0%,100%{opacity:1}
+  50%{opacity:.5}
+}
+
 @media(max-width:860px){
   .app{padding:16px 14px 80px}
   .top{padding-bottom:10px}
