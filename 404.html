@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Le Bar Zine</title>
+<meta name="robots" content="noindex">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#f9f7f2;
+  --ink:#0d0c0a;
+  --red:#b8221e;
+  --muted:#6b6560;
+  --soft:#ede8df;
+}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Inter,ui-sans-serif,system-ui,sans-serif;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  background-size:180px;mix-blend-mode:multiply;
+}
+.wrap{
+  max-width:680px;
+  margin:0 auto;
+  padding:48px 24px 80px;
+  flex:1;
+}
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  border-bottom:3px solid var(--ink);
+  padding-bottom:14px;
+  margin-bottom:0;
+}
+.brand{
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:-.02em;
+  font-size:26px;
+  line-height:.85;
+}
+.issue{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:10px;
+  text-transform:uppercase;
+  color:var(--red);
+  text-align:right;
+  letter-spacing:.04em;
+  line-height:1.6;
+}
+.hero{
+  padding:52px 0 40px;
+  border-bottom:2px solid var(--ink);
+}
+.code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--red);
+  margin-bottom:16px;
+}
+h1{
+  font-size:clamp(64px,16vw,140px);
+  font-weight:900;
+  font-style:italic;
+  letter-spacing:-.04em;
+  line-height:.78;
+  text-transform:uppercase;
+  margin-bottom:24px;
+}
+.sub{
+  font-size:20px;
+  line-height:1.35;
+  color:#322d28;
+  max-width:520px;
+  margin-bottom:32px;
+}
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.btn-primary{
+  display:inline-block;
+  border:2px solid var(--ink);
+  background:var(--red);
+  color:white;
+  padding:13px 20px;
+  font-weight:900;
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  text-decoration:none;
+  transition:background .1s;
+}
+.btn-primary:hover{background:#d42e29}
+.btn-ghost{
+  display:inline-block;
+  border:2px solid var(--ink);
+  background:transparent;
+  color:var(--ink);
+  padding:13px 20px;
+  font-weight:900;
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  text-decoration:none;
+  transition:background .1s,color .1s;
+}
+.btn-ghost:hover{background:var(--ink);color:white}
+.note{
+  margin-top:40px;
+  border-top:1px solid var(--ink);
+  padding-top:20px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:11px;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  line-height:1.6;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">Le Bar<br>Zine</div>
+    <div class="issue">Lausanne<br>zine local<br>beta</div>
+  </header>
+
+  <section class="hero">
+    <div class="code">Erreur 404 — page introuvable</div>
+    <h1>Cette<br>page<br>existe<br>pas.</h1>
+    <p class="sub">Mais Lausanne, oui. Et il y a probablement un concert ce soir, une manif demain, et un bar qui mérite une fiche.</p>
+    <div class="actions">
+      <a class="btn-primary" href="/le-bar-zine/">Retour au radar →</a>
+      <a class="btn-ghost" href="/le-bar-zine/?tab=agenda">Ce soir →</a>
+    </div>
+  </section>
+
+  <div class="note">
+    URL incorrecte ou lien cassé.<br>
+    Tu as trouvé un bug ? <a href="https://github.com/coffee-tech2/le-bar-zine/issues/new" target="_blank" rel="noopener" style="color:var(--red)">Signale-le ici →</a>
+  </div>
+</div>
+</body>
+</html>

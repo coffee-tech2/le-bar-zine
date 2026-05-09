@@ -1,0 +1,55 @@
+{
+  "name": "Le Bar Zine — Lausanne",
+  "short_name": "Bar Zine",
+  "description": "Concerts, manifs, bars, scènes alternatives. Le radar éditorial lausannois.",
+  "start_url": "/le-bar-zine/",
+  "scope": "/le-bar-zine/",
+  "display": "standalone",
+  "background_color": "#f9f7f2",
+  "theme_color": "#f9f7f2",
+  "lang": "fr-CH",
+  "orientation": "portrait-primary",
+  "categories": ["entertainment", "lifestyle", "social"],
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ce soir",
+      "short_name": "Ce soir",
+      "description": "Events du moment à Lausanne",
+      "url": "/le-bar-zine/?tab=agenda",
+      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "✦ Zine",
+      "short_name": "Zine",
+      "description": "Sélection éditoriale",
+      "url": "/le-bar-zine/?tab=zine",
+      "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
