@@ -16,9 +16,11 @@ function readUrlState(){
   const tab = params.get("tab");
   const mood = params.get("mood");
   const q = params.get("q");
+  const bar = params.get("bar");
   const validTabs = ["all","zine","agenda","militant","support","saved"];
   if(tab && validTabs.includes(tab)) state.tab = tab;
   if(mood) state.mood = mood;
+  if(bar) pendingSharedBarId = bar;
   if(q){
     state.query = q;
     const input = document.getElementById("searchInput");
@@ -38,7 +40,7 @@ function validateBars(bars){
         issues++;
       }
     });
-    if(!["bars","night"].includes(b.section)){
+    if(!["bars","night","venue"].includes(b.section)){
       console.warn(`[Bar Zine] Bar "${b.id}" a une section invalide: "${b.section}"`);
       issues++;
     }
@@ -66,7 +68,7 @@ function validateEvents(events){
 let BARS = [];
 let EVENTS = [];
 
-const DATA_VERSION = "20260507-v12";
+const DATA_VERSION = "20260510-v14";
 const CONTRIBUTION_URL = "https://github.com/coffee-tech2/le-bar-zine/issues/new";
 const SUPPORT_URL = "https://github.com/sponsors/coffee-tech2";
 
@@ -170,6 +172,7 @@ const TABS = [
 // ─── STATE ───────────────────────────────────────────────────────────
 let saved = readSaved();
 let state = { query:"", mood:"", tab:"all" };
+let pendingSharedBarId = "";
 
 // ─── UTILS ───────────────────────────────────────────────────────────
 function readSaved(){
@@ -280,6 +283,42 @@ function blob(b){
 }
 function barHook(bar){
   return bar.short || bar.description || bar.guide_note || "";
+}
+function toast(message){
+  let node = document.getElementById("barZineToast");
+  if(!node){
+    node = document.createElement("div");
+    node.id = "barZineToast";
+    node.setAttribute("role", "status");
+    node.setAttribute("aria-live", "polite");
+    document.body.appendChild(node);
+  }
+  node.textContent = message;
+  node.classList.add("visible");
+  clearTimeout(node._timer);
+  node._timer = setTimeout(() => node.classList.remove("visible"), 2200);
+}
+function filterTagValue(tag){
+  state.query = String(tag || "").trim();
+  state.tab = "all";
+  const searchInput = document.getElementById("searchInput");
+  if(searchInput) searchInput.value = state.query;
+  render();
+  document.getElementById("grid")?.scrollIntoView({ behavior:"smooth", block:"start" });
+}
+function barShareUrl(id){
+  const url = new URL(window.location.href);
+  url.search = "";
+  url.hash = "";
+  url.searchParams.set("bar", id);
+  return url.href;
+}
+function openSharedBarFromUrl(){
+  const id = pendingSharedBarId || new URLSearchParams(window.location.search).get("bar");
+  if(!id) return;
+  const exists = BARS.some(bar => bar.id === id);
+  if(exists) setTimeout(() => window.openDetail(id), 0);
+  pendingSharedBarId = "";
 }
 
 // ─── SCORE PAR MOOD ─────────────────────────────────────────────────
@@ -481,14 +520,20 @@ function renderEventCard(event){
   const plans = eventPlanCards(event);
   return `
     <article class="event-card">
-      <div>
-        <p class="event-date">${escapeHtml(event.date_label)} · ${escapeHtml(event.area)}</p>
-        <h2>${escapeHtml(event.title)}</h2>
-        <p class="event-place">${escapeHtml(event.venue)}</p>
+      <div class="event-head">
+        <div class="event-venue-block">
+          ${safeUrl(event.url)
+            ? `<a class="event-venue-link" href="${href(event.url)}" target="_blank" rel="noopener">${escapeHtml(event.venue)} →</a>`
+            : `<span class="event-venue-link">${escapeHtml(event.venue)}</span>`
+          }
+          <span class="event-area">${escapeHtml(event.area)}</span>
+        </div>
+        <p class="event-date">${escapeHtml(event.date_label)}</p>
       </div>
-      <p>${escapeHtml(event.description)}</p>
+      <h2>${escapeHtml(event.title)}</h2>
+      <p class="event-desc">${escapeHtml(event.description)}</p>
       <div class="tags">
-        ${(event.tags || []).slice(0,6).map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
+        ${(event.tags || []).slice(0,5).map(tag => `<button class="tag tag-clickable" type="button" onclick="window.filterTag('${barRef(tag)}',event)" aria-label="Filtrer par ${escapeHtml(tag)}">${escapeHtml(tag)}</button>`).join("")}
         <span class="status status-${status.key}">${escapeHtml(status.label)}</span>
       </div>
       ${plans.length ? `
@@ -505,7 +550,6 @@ function renderEventCard(event){
           </div>
         </div>
       ` : ''}
-      ${safeUrl(event.url) ? `<a class="event-link" href="${href(event.url)}" target="_blank" rel="noopener">Envoyer / voir la source →</a>` : ''}
     </article>
   `;
 }
@@ -682,8 +726,8 @@ function renderGrid(){
     : "Rien ici. Change de mood ou de recherche.";
 
   document.getElementById("grid").innerHTML = data.length
-    ? data.map((b, _ci) => `
-      <article class="card" style="animation-delay:${_ci * 40}ms" onclick="window.openDetail('${barRef(b.id)}')">
+    ? data.map((b, index) => `
+      <article class="card" style="animation-delay:${Math.min(index, 8) * 35}ms" onclick="window.openDetail('${barRef(b.id)}')">
         <div class="card-left">
           <h2 class="name">${escapeHtml(b.name)}</h2>
           <div class="meta">${escapeHtml(b.area)} · ${escapeHtml(b.type)}</div>
@@ -700,12 +744,15 @@ function renderGrid(){
             <strong>${escapeHtml((asList(b.decision_avoid).length ? asList(b.decision_avoid) : asList(b.avoid_if)).slice(0,1).join(" · ") || "rien de bloquant dans la fiche")}</strong>
           </div>
           <div class="tags">
-            ${asList(b.tags).slice(0,3).map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join("")}
-            ${isTerrace(b)?'<span class="tag">terrasse ✓</span>':''}
+            ${asList(b.tags).slice(0,3).map(t=>`<button class="tag tag-clickable" type="button" onclick="window.filterTag('${barRef(t)}',event)" aria-label="Filtrer par ${escapeHtml(t)}">${escapeHtml(t)}</button>`).join("")}
+            ${isTerrace(b)?'<button class="tag tag-clickable" type="button" onclick="window.filterTag(\'terrasse\',event)" aria-label="Filtrer par terrasse">terrasse ✓</button>':''}
           </div>
           <div class="card-open">Ouvrir la fiche →</div>
         </div>
-        <button class="save-btn ${isSaved(b.id)?'saved':''}" onclick="window.toggleSave('${barRef(b.id)}',event)" aria-label="${isSaved(b.id)?'Retirer des favoris':'Ajouter aux favoris'}">${isSaved(b.id)?'♥':'♡'}</button>
+        <div class="card-tools">
+          <button class="save-btn ${isSaved(b.id)?'saved':''}" onclick="window.toggleSave('${barRef(b.id)}',event)" aria-label="${isSaved(b.id)?'Retirer des favoris':'Ajouter aux favoris'}">${isSaved(b.id)?'♥':'♡'}</button>
+          <button class="share-btn" type="button" onclick="window.shareBar('${barRef(b.id)}',event)" aria-label="Partager ${escapeHtml(b.name)}">↗</button>
+        </div>
       </article>
     `).join("")
     : `<div class="empty">${escapeHtml(emptyMessage)}</div>`;
@@ -962,6 +1009,31 @@ window.closeDetail = function(){
   document.getElementById("detail").classList.remove("open");
 };
 
+window.shareBar = function(id, e){
+  if(e) e.stopPropagation();
+  const bar = BARS.find(item => item.id === id);
+  if(!bar) return;
+  const url = barShareUrl(id);
+  const title = `${bar.name} — Le Bar Zine`;
+  const text = barHook(bar);
+  if(navigator.share){
+    navigator.share({ title, text, url }).catch(() => {});
+    return;
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url)
+      .then(() => toast("Lien copié"))
+      .catch(() => toast(url));
+    return;
+  }
+  toast(url);
+};
+
+window.filterTag = function(tag, e){
+  if(e) e.stopPropagation();
+  filterTagValue(tag);
+};
+
 // ─── NAVIGATION ──────────────────────────────────────────────────────
 window.setMood = function(m){
   state.mood = state.mood === m ? "" : m;
@@ -1113,8 +1185,10 @@ async function init(){
     validateBars(BARS);
     validateEvents(EVENTS);
     _retryCount = 0;
+    pendingSharedBarId = new URLSearchParams(window.location.search).get("bar") || "";
     readUrlState();
     render();
+    openSharedBarFromUrl();
   } catch(error) {
     console.error("Init error:", error);
     const isOffline = !navigator.onLine;

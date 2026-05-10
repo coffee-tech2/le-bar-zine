@@ -472,6 +472,11 @@ input:focus-visible{
   padding:22px 0;
   cursor:pointer;
   transition:background .1s;
+  animation:card-in .24s ease both;
+}
+@keyframes card-in{
+  from{opacity:0;transform:translateY(7px)}
+  to{opacity:1;transform:translateY(0)}
 }
 .card:hover{background:var(--paper-dark);margin:0 -8px;padding:22px 8px}
 .card-left{}
@@ -574,6 +579,13 @@ input:focus-visible{
   text-transform:uppercase;
   letter-spacing:.02em;
 }
+.tag-clickable{
+  color:var(--ink);
+  cursor:pointer;
+  line-height:1;
+  transition:background .1s,color .1s,border-color .1s;
+}
+.tag-clickable:hover{background:var(--ink);border-color:var(--ink);color:white}
 .save-btn{
   border:2px solid var(--ink);
   background:var(--paper);
@@ -589,6 +601,46 @@ input:focus-visible{
   flex:0 0 auto;
 }
 .save-btn.saved{background:var(--red);color:white;border-color:var(--red)}
+.card-tools{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  justify-self:end;
+}
+.share-btn{
+  align-items:center;
+  background:var(--paper);
+  border:1px solid var(--ink);
+  color:var(--ink);
+  cursor:pointer;
+  display:flex;
+  font-size:15px;
+  height:36px;
+  justify-content:center;
+  transition:background .1s,color .1s,border-color .1s;
+  width:36px;
+}
+.share-btn:hover{background:var(--ink);border-color:var(--ink);color:white}
+#barZineToast{
+  background:var(--ink);
+  bottom:24px;
+  color:white;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12px;
+  font-weight:700;
+  left:50%;
+  letter-spacing:.04em;
+  opacity:0;
+  padding:10px 16px;
+  pointer-events:none;
+  position:fixed;
+  text-transform:uppercase;
+  transform:translateX(-50%) translateY(10px);
+  transition:opacity .18s,transform .18s;
+  white-space:nowrap;
+  z-index:400;
+}
+#barZineToast.visible{opacity:1;transform:translateX(-50%) translateY(0)}
 
 /* â”€â”€â”€ SIDEBAR â”€â”€â”€ */
 .side{
@@ -1192,28 +1244,56 @@ input:focus-visible{
 .event-card{
   border-bottom:2px solid var(--ink);
   display:grid;
-  gap:12px;
-  padding:18px 0;
+  gap:10px;
+  padding:20px 0;
 }
-.event-date,
-.event-place{
+.event-head{
+  align-items:flex-start;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:space-between;
+}
+.event-venue-block{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+.event-venue-link{
+  border-bottom:2px solid var(--ink);
+  color:var(--ink);
+  font-family:Inter,ui-sans-serif,system-ui,sans-serif;
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:-.01em;
+  text-decoration:none;
+  text-transform:uppercase;
+  transition:color .1s,border-color .1s;
+}
+a.event-venue-link:hover{border-color:var(--red);color:var(--red)}
+.event-area,
+.event-date{
   font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
   font-size:11px;
   letter-spacing:.04em;
   text-transform:uppercase;
 }
-.event-date{color:var(--red);font-weight:700}
-.event-place{color:var(--muted);margin-top:4px}
+.event-area{color:var(--muted);font-size:10px}
+.event-date{color:var(--red);font-weight:700;white-space:nowrap}
 .event-card h2{
   font-family:Inter,ui-sans-serif,system-ui,sans-serif;
-  font-size:32px;
+  font-size:28px;
   font-style:italic;
   font-weight:900;
   letter-spacing:-.02em;
-  line-height:.9;
+  line-height:.92;
   text-transform:uppercase;
 }
-.event-link{justify-self:start}
+.event-desc{
+  color:#322d28;
+  font-size:15px;
+  line-height:1.4;
+}
 .event-plans{
   border-top:1px solid rgba(13,12,10,.28);
   display:grid;
@@ -1499,7 +1579,7 @@ input:focus-visible{
   .card:hover{margin:0;padding:18px 0}
   .card-left{grid-column:1 / 2}
   .card .card-body{grid-column:1 / 2}
-  .save-btn{grid-column:2 / 3;grid-row:1;justify-self:end}
+  .card-tools{grid-column:2 / 3;grid-row:1;justify-self:end}
   .name{font-size:25px;line-height:.92}
   .meta{font-size:10px}
   .status{font-size:9px;margin-top:7px}
@@ -1566,6 +1646,7 @@ input:focus-visible{
   .controls{grid-template-columns:1fr;margin:0 -12px;padding-left:12px;padding-right:12px}
   .tonight-strip{margin:0 -12px;padding-left:12px;padding-right:12px}
   .card{grid-template-columns:1fr 44px}
+  .card-tools{grid-column:2 / 3;grid-row:1;justify-self:end}
   .name{font-size:23px}
   .card-fit{display:none}
   .tags{gap:4px}
