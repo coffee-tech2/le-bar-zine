@@ -1247,6 +1247,12 @@ input:focus-visible{
   gap:10px;
   padding:20px 0;
 }
+.event-card.event-past{
+  opacity:.58;
+}
+.event-card.event-past .event-plans{
+  display:none;
+}
 .event-head{
   align-items:flex-start;
   display:flex;
@@ -1293,6 +1299,30 @@ a.event-venue-link:hover{border-color:var(--red);color:var(--red)}
   color:#322d28;
   font-size:15px;
   line-height:1.4;
+}
+.time-badge{
+  background:var(--paper-dark);
+  border:1px solid rgba(13,12,10,.38);
+  color:var(--muted);
+  display:inline-flex;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.04em;
+  line-height:1;
+  padding:7px 9px;
+  text-transform:uppercase;
+}
+.time-now,
+.time-soon{
+  background:var(--red);
+  border-color:var(--red);
+  color:white;
+}
+.time-upcoming{color:var(--ink)}
+.time-past{
+  background:transparent;
+  border-color:rgba(13,12,10,.25);
 }
 .event-plans{
   border-top:1px solid rgba(13,12,10,.28);

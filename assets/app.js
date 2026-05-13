@@ -68,7 +68,7 @@ function validateEvents(events){
 let BARS = [];
 let EVENTS = [];
 
-const DATA_VERSION = "20260510-v14";
+const DATA_VERSION = "20260514-v15";
 const CONTRIBUTION_URL = "https://github.com/coffee-tech2/le-bar-zine/issues/new";
 const SUPPORT_URL = "https://github.com/sponsors/coffee-tech2";
 
@@ -269,6 +269,60 @@ function eventStatus(event){
   if(event.status === "à compléter") return { key:"todo", label:"à compléter" };
   return { key:"check", label:event.status || "info prudente" };
 }
+const MONTH_INDEX = {
+  janvier:0, fevrier:1, février:1, mars:2, avril:3, mai:4, juin:5,
+  juillet:6, aout:7, août:7, septembre:8, octobre:9, novembre:10, decembre:11, décembre:11
+};
+function localDay(date = new Date()){
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
+function makeDay(year, monthName, day){
+  const month = MONTH_INDEX[normalizeText(monthName)];
+  if(month === undefined) return null;
+  return new Date(Number(year), month, Number(day));
+}
+function eventDateRange(event){
+  if(event.status === "ouvert" || event.status === "récurrent" || event.status === "à compléter") return null;
+  const label = normalizeText(event.date_label);
+  let match = label.match(/(\d{1,2})\s+([a-z]+)\s*-\s*(\d{1,2})\s+([a-z]+)\s+(20\d{2})/);
+  if(match){
+    const start = makeDay(match[5], match[2], match[1]);
+    const end = makeDay(match[5], match[4], match[3]);
+    return start && end ? { start, end } : null;
+  }
+  match = label.match(/(\d{1,2})\s*-\s*(\d{1,2})\s+([a-z]+)\s+(20\d{2})/);
+  if(match){
+    const start = makeDay(match[4], match[3], match[1]);
+    const end = makeDay(match[4], match[3], match[2]);
+    return start && end ? { start, end } : null;
+  }
+  match = label.match(/(\d{1,2})\s+([a-z]+)\s+(20\d{2})/);
+  if(match){
+    const day = makeDay(match[3], match[2], match[1]);
+    return day ? { start:day, end:day } : null;
+  }
+  match = event.id.match(/(20\d{2})-(\d{2})-(\d{2})/);
+  if(match){
+    const day = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+    return { start:day, end:day };
+  }
+  return null;
+}
+function eventTimeState(event){
+  const range = eventDateRange(event);
+  if(!range) return { key:"evergreen", label:event.status === "récurrent" ? "récurrent" : "à relayer", sort:99 };
+  const today = localDay();
+  if(range.end < today) return { key:"past", label:"passé", sort:80 };
+  if(range.start <= today && range.end >= today) return { key:"now", label:"en cours", sort:0 };
+  const days = Math.round((range.start - today) / 86400000);
+  if(days <= 7) return { key:"soon", label:days <= 1 ? "demain / bientôt" : "cette semaine", sort:1 };
+  return { key:"upcoming", label:"à venir", sort:days };
+}
+function eventSortValue(event){
+  const range = eventDateRange(event);
+  if(!range) return Number.MAX_SAFE_INTEGER;
+  return range.start.getTime();
+}
 
 // Blob pour la recherche fulltext
 function blob(b){
@@ -407,13 +461,19 @@ function filteredEvents(){
   return EVENTS.filter(event => {
     if(state.query && !eventBlob(event).includes(state.query.toLowerCase())) return false;
     return true;
+  }).sort((a, b) => {
+    const stateA = eventTimeState(a);
+    const stateB = eventTimeState(b);
+    if(stateA.key === "past" && stateB.key !== "past") return 1;
+    if(stateB.key === "past" && stateA.key !== "past") return -1;
+    return eventSortValue(a) - eventSortValue(b) || a.title.localeCompare(b.title);
   });
 }
 
 const EVENT_SECTIONS = [
   {
     key:"dated",
-    title:"Agenda daté",
+    title:"Prochaines dates",
     note:"concerts · fêtes · sorties"
   },
   {
@@ -430,11 +490,17 @@ const EVENT_SECTIONS = [
     key:"calls",
     title:"Appels & contributions",
     note:"à compléter avec le terrain"
+  },
+  {
+    key:"past",
+    title:"Passés récemment",
+    note:"archive courte · à renouveler"
   }
 ];
 
 function eventSectionKey(event){
   const text = eventBlob(event);
+  if(eventTimeState(event).key === "past") return "past";
   if(event.status === "ouvert" || event.category === "repérage") return "calls";
   if(event.status === "récurrent") return "recurring";
   if(text.includes("pride") || text.includes("queer") || text.includes("lgbt") || text.includes("fières")) return "queer";
@@ -517,9 +583,10 @@ function relatedEventsForBar(bar){
 
 function renderEventCard(event){
   const status = eventStatus(event);
+  const time = eventTimeState(event);
   const plans = eventPlanCards(event);
   return `
-    <article class="event-card">
+    <article class="event-card event-${time.key}">
       <div class="event-head">
         <div class="event-venue-block">
           ${safeUrl(event.url)
@@ -534,6 +601,7 @@ function renderEventCard(event){
       <p class="event-desc">${escapeHtml(event.description)}</p>
       <div class="tags">
         ${(event.tags || []).slice(0,5).map(tag => `<button class="tag tag-clickable" type="button" onclick="window.filterTag('${barRef(tag)}',event)" aria-label="Filtrer par ${escapeHtml(tag)}">${escapeHtml(tag)}</button>`).join("")}
+        <span class="time-badge time-${time.key}">${escapeHtml(time.label)}</span>
         <span class="status status-${status.key}">${escapeHtml(status.label)}</span>
       </div>
       ${plans.length ? `
@@ -554,6 +622,13 @@ function renderEventCard(event){
   `;
 }
 
+function spotlightEvents(limit = 2){
+  return EVENTS
+    .filter(event => event.status === "vérifié" && eventTimeState(event).key !== "past")
+    .sort((a, b) => eventSortValue(a) - eventSortValue(b))
+    .slice(0, limit);
+}
+
 function renderTonightStrip(){
   const strip = document.getElementById("tonightStrip");
   if(!strip) return;
@@ -563,14 +638,15 @@ function renderTonightStrip(){
     return;
   }
 
-  const spotlight = EVENTS
-    .filter(event => event.status === "vérifié")
-    .slice(0, 2);
+  const spotlight = spotlightEvents(2);
+  const stripLabel = spotlight.some(event => eventTimeState(event).key === "now")
+    ? "Ce soir à Lausanne →"
+    : "À venir à Lausanne →";
 
   strip.hidden = !spotlight.length;
   strip.innerHTML = spotlight.length ? `
     <div class="tonight-head">
-      <span>Ce soir à Lausanne →</span>
+      <span>${escapeHtml(stripLabel)}</span>
     </div>
     <div class="tonight-list">
       ${spotlight.map(event => {
@@ -595,7 +671,7 @@ function renderPulse(){
   const pulseBars = document.getElementById("pulseBars");
   if(!pulseEvents || !pulseBars) return;
 
-  const verifiedEvents = EVENTS.filter(event => event.status === "vérifié").length;
+  const verifiedEvents = EVENTS.filter(event => event.status === "vérifié" && eventTimeState(event).key !== "past").length;
   const recurringEvents = EVENTS.filter(event => event.status === "récurrent").length;
   const nightPlaces = BARS.filter(isNight).length;
   const venues = BARS.filter(isVenue).length;
