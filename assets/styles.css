@@ -1286,6 +1286,29 @@ a.event-venue-link:hover{border-color:var(--red);color:var(--red)}
 }
 .event-area{color:var(--muted);font-size:10px}
 .event-date{color:var(--red);font-weight:700;white-space:nowrap}
+.event-date-block{
+  align-items:flex-end;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.event-route{
+  border:1px solid var(--ink);
+  color:var(--ink);
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.04em;
+  padding:6px 8px;
+  text-decoration:none;
+  text-transform:uppercase;
+  transition:background .12s,color .12s;
+}
+.event-route:hover,
+.event-route:focus-visible{
+  background:var(--ink);
+  color:white;
+}
 .event-card h2{
   font-family:Inter,ui-sans-serif,system-ui,sans-serif;
   font-size:28px;

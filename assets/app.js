@@ -149,7 +149,7 @@ const MOODS = [
   },
   {
     key:"nuit",
-    label:"Continuer après",
+    label:"Nuit",
     sub:"nuit, salle, danse",
     keywords:["nuit","club","concert","danse","tard","musique","sortie"],
     requireSection:"night"
@@ -367,6 +367,15 @@ function barShareUrl(id){
   url.searchParams.set("bar", id);
   return url.href;
 }
+function mapsDirectionUrl(destination){
+  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`;
+}
+function barMapDestination(bar){
+  return `${bar.name} ${bar.area || ""} Lausanne`;
+}
+function eventMapDestination(event){
+  return `${event.venue} ${event.area || ""} Lausanne`;
+}
 function openSharedBarFromUrl(){
   const id = pendingSharedBarId || new URLSearchParams(window.location.search).get("bar");
   if(!id) return;
@@ -542,27 +551,19 @@ function nearbyBarsForEvent(event, limit = 5){
 
 function eventPlanCards(event){
   if(event.status === "ouvert" || event.status === "à compléter") return [];
-  const nearby = nearbyBarsForEvent(event).filter(bar => !isVenue(bar));
-  const drink = nearby.find(bar => !isNight(bar)) || nearby[0];
-  const settle = nearby.find(bar => !isNight(bar) && isLow(bar)) || drink;
-  const eventText = eventBlob(event);
-  const after = nearby.find(bar => isNight(bar) && !eventText.includes(bar.name.toLowerCase())) || nearby[1] || nearby[0];
-  const closest = nearby[0];
-  const rawPlans = [
-    { label:"Boire avant", bar:drink, hint:"un verre sans trop réfléchir" },
-    { label:"Se poser avant", bar:settle, hint:"arriver tôt sans courir" },
-    { label:"Continuer après", bar:after, hint:"si la soirée déborde" },
-    { label:"Près du lieu", bar:closest, hint:"repère autour de l'event" }
-  ];
-
   const seen = new Set();
-  return rawPlans.filter(plan => {
-    if(!plan.bar) return false;
-    const key = `${plan.label}-${plan.bar.id}`;
-    if(seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
+  return nearbyBarsForEvent(event, 4)
+    .filter(bar => !isVenue(bar))
+    .filter(bar => {
+      if(seen.has(bar.id)) return false;
+      seen.add(bar.id);
+      return true;
+    })
+    .slice(0, 3)
+    .map(bar => ({
+      bar,
+      hint: [bar.area, bar.type].filter(Boolean).join(" · ")
+    }));
 }
 
 function relatedEventsForBar(bar){
@@ -585,6 +586,7 @@ function renderEventCard(event){
   const status = eventStatus(event);
   const time = eventTimeState(event);
   const plans = eventPlanCards(event);
+  const routeUrl = mapsDirectionUrl(eventMapDestination(event));
   return `
     <article class="event-card event-${time.key}">
       <div class="event-head">
@@ -595,7 +597,10 @@ function renderEventCard(event){
           }
           <span class="event-area">${escapeHtml(event.area)}</span>
         </div>
-        <p class="event-date">${escapeHtml(event.date_label)}</p>
+        <div class="event-date-block">
+          <p class="event-date">${escapeHtml(event.date_label)}</p>
+          <a class="event-route" href="${escapeHtml(routeUrl)}" target="_blank" rel="noopener">itinéraire</a>
+        </div>
       </div>
       <h2>${escapeHtml(event.title)}</h2>
       <p class="event-desc">${escapeHtml(event.description)}</p>
@@ -606,11 +611,11 @@ function renderEventCard(event){
       </div>
       ${plans.length ? `
         <div class="event-plans">
-          <p>Plans autour</p>
+          <p>Aux alentours</p>
           <div>
             ${plans.map(plan => `
               <button type="button" onclick="window.openDetail('${barRef(plan.bar.id)}')">
-                <span>${escapeHtml(plan.label)}</span>
+                <span>Aux alentours</span>
                 <strong>${escapeHtml(plan.bar.name)}</strong>
                 <em>${escapeHtml(plan.hint)}</em>
               </button>
@@ -657,7 +662,7 @@ function renderTonightStrip(){
             <p>${escapeHtml(event.date_label)} · ${escapeHtml(event.area)}</p>
             <h2>${escapeHtml(event.title)}</h2>
             <button type="button" ${mainPlan ? `onclick="window.openDetail('${barRef(mainPlan.bar.id)}')"` : `onclick="window.goPulse('events')"`}>
-              ${escapeHtml(event.venue)} · plans autour →
+              ${escapeHtml(event.venue)} · aux alentours →
             </button>
           </article>
         `;
@@ -1070,7 +1075,7 @@ window.openDetail = function(id){
     </div>
 
     <div class="cta">
-      <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(b.name+' Lausanne')}" target="_blank" rel="noopener">Voir sur la carte</a>
+      <a href="${escapeHtml(mapsDirectionUrl(barMapDestination(b)))}" target="_blank" rel="noopener">Itinéraire Maps</a>
       ${websiteUrl ? `<a href="${escapeHtml(websiteUrl)}" target="_blank" rel="noopener">Site officiel</a>` : ''}
       ${instagramUrl ? `<a href="${escapeHtml(instagramUrl)}" target="_blank" rel="noopener">Instagram</a>` : ''}
       ${(!websiteUrl && !instagramUrl) ? `<a href="https://www.google.com/search?q=${encodeURIComponent(b.name+' Lausanne')}" target="_blank" rel="noopener">Chercher infos</a>` : ''}
