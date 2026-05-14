@@ -165,9 +165,9 @@
     "services": {
       "terrasse": "oui",
       "food": "oui",
-      "couvert": "non / info prudente",
-      "pmr": "info prudente",
-      "chauffage": "info prudente"
+      "couvert": "non / non communiqué",
+      "pmr": "non communiqué",
+      "chauffage": "non communiqué"
     },
     "music": "ambiance brasserie, musique secondaire",
     "sound": "moyen",
@@ -230,9 +230,9 @@
     "services": {
       "terrasse": "oui",
       "food": "oui",
-      "couvert": "partiel / info prudente",
-      "pmr": "info prudente",
-      "chauffage": "info prudente"
+      "couvert": "partiel / non communiqué",
+      "pmr": "non communiqué",
+      "chauffage": "non communiqué"
     },
     "music": "ambiance café, pas un lieu musical",
     "sound": "bas à moyen",
@@ -248,7 +248,7 @@
     "description": "Un des choix les plus faciles quand tu veux éviter de te tromper. Ambiance locale, plutôt douce, assez vivante pour ne pas être morte, assez calme pour parler.",
     "guide_note": "Très bon refuge quand tu hésites.",
     "sources": [
-      "réputation locale / retours publics à consolider",
+      "réputation locale / fiche publique à recouper sur place",
       "site officiel / lien vérifié",
       "Instagram public"
     ],
@@ -295,9 +295,9 @@
     "services": {
       "terrasse": "oui",
       "food": "oui",
-      "couvert": "partiel / info prudente",
-      "pmr": "info prudente",
-      "chauffage": "info prudente"
+      "couvert": "partiel / non communiqué",
+      "pmr": "non communiqué",
+      "chauffage": "non communiqué"
     },
     "music": "ambiance pub, parfois liée aux événements sportifs",
     "sound": "élevé aux moments d'affluence",
@@ -313,7 +313,7 @@
     "description": "Le pub central qui règle le problème des groupes : tout le monde comprend le concept, personne n'a besoin d'un briefing. La terrasse fait beaucoup pour son intérêt.",
     "guide_note": "Très utile quand le groupe n'arrive pas à décider.",
     "sources": [
-      "site officiel / retours publics à consolider",
+      "site officiel / fiche publique à recouper sur place",
       "site officiel / lien vérifié"
     ],
     "events": [],
@@ -501,8 +501,8 @@
       "terrasse": "oui",
       "food": "oui",
       "couvert": "oui",
-      "pmr": "info prudente",
-      "chauffage": "info prudente"
+      "pmr": "non communiqué",
+      "chauffage": "non communiqué"
     },
     "music": "DJ, concerts et open mic annoncés selon programmation officielle",
     "sound": "moyen à élevé selon soirée",
@@ -576,8 +576,8 @@
       "terrasse": "oui",
       "food": "oui",
       "couvert": "oui",
-      "pmr": "info prudente",
-      "chauffage": "info prudente"
+      "pmr": "non communiqué",
+      "chauffage": "non communiqué"
     },
     "music": "musique pas centrale ; lieu plutôt drinks, mezzes et jeux de société",
     "sound": "moyen",
@@ -641,9 +641,9 @@
     "services": {
       "terrasse": "oui",
       "food": "oui",
-      "couvert": "info prudente",
-      "pmr": "partiel / info prudente",
-      "chauffage": "info prudente"
+      "couvert": "non communiqué",
+      "pmr": "partiel / non communiqué",
+      "chauffage": "non communiqué"
     },
     "music": "ambiance café/bar, musique pas centrale",
     "sound": "moyen",
@@ -833,9 +833,9 @@
     "services": {
       "terrasse": "oui",
       "food": "oui",
-      "couvert": "info prudente",
-      "pmr": "info prudente",
-      "chauffage": "info prudente"
+      "couvert": "non communiqué",
+      "pmr": "non communiqué",
+      "chauffage": "non communiqué"
     },
     "music": "ambiance café, pas centrée sur la musique",
     "sound": "moyen",
@@ -1089,9 +1089,9 @@
     "services": {
       "terrasse": "oui",
       "food": "oui",
-      "couvert": "info prudente",
-      "pmr": "oui / selon source",
-      "chauffage": "info prudente"
+      "couvert": "non communiqué",
+      "pmr": "oui / source publique",
+      "chauffage": "non communiqué"
     },
     "music": "ambiance liée à la scène locale et aux événements",
     "sound": "moyen à élevé selon programmation",
@@ -1109,10 +1109,11 @@
     "guide_note": "À garder comme plan pré-Docks : tu te poses, tu manges ou tu bois un verre, puis tu files au concert sans traverser la ville.",
     "sources": [
       "Lausanne Tourisme — Base Bar",
-      "pive.ch — horaires et fiche lieu"
+      "local.ch — fiche Base Bar",
+      "Tables ouvertes — fiche Base Bar"
     ],
     "events": [],
-    "website": "",
+    "website": "https://www.local.ch/fr/d/lausanne/1004/restaurant/base-bar-zwD5N6n5R1mPYxoN9eM8NQ",
     "instagram": "",
     "link_confidence": "moyen",
     "short": "Parfait si tu as un concert aux Docks et que tu veux boire un truc juste avant.",
@@ -1151,10 +1152,10 @@
       "tu cherches un bar ouvert hors concert"
     ],
     "services": {
-      "terrasse": "non / info prudente",
+      "terrasse": "non / non communiqué",
       "food": "non",
       "couvert": "oui",
-      "pmr": "oui / selon source",
+      "pmr": "oui / source publique",
       "chauffage": "non"
     },
     "music": "programmation live variable selon les artistes",
@@ -1221,10 +1222,10 @@
       "tu veux discuter assis tranquillement"
     ],
     "services": {
-      "terrasse": "non / info prudente",
+      "terrasse": "non / non communiqué",
       "food": "non",
       "couvert": "oui",
-      "pmr": "info prudente",
+      "pmr": "non communiqué",
       "chauffage": "non"
     },
     "music": "scène locale et alternative, variable selon les événements",
@@ -1241,7 +1242,7 @@
     "description": "Un lieu à classer dans la nuit / culture, pas dans les bars où l'on vient seulement discuter.",
     "guide_note": "La programmation définit l'expérience.",
     "sources": [
-      "site officiel / programmation vérifiée",
+      "site officiel / programmation",
       "Lausanne Tourisme — Le Romandie"
     ],
     "events": [

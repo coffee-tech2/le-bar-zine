@@ -68,7 +68,7 @@ function validateEvents(events){
 let BARS = [];
 let EVENTS = [];
 
-const DATA_VERSION = "20260514-v16";
+const DATA_VERSION = "20260514-v17";
 const CONTRIBUTION_URL = "https://github.com/coffee-tech2/le-bar-zine/issues/new";
 const SUPPORT_URL = "https://github.com/sponsors/coffee-tech2";
 
@@ -708,9 +708,9 @@ function renderIntroPanel(){
   return `
     <section class="zine-panel">
       <div>
-        <p class="kicker">Culture lausannoise · relais communautaire · agenda vivant</p>
-        <h2>À relayer, pas à lisser.</h2>
-        <p>Concerts, scènes locales, événements associatifs, manifs, appels, lieux alternatifs et formats qui passent souvent sous les radars classiques. L'objectif : rendre visible, sourcer proprement, et relier chaque event à des plans autour.</p>
+        <p class="kicker">Le zine · ligne éditoriale</p>
+        <h2>Local, sourcé, pas neutre.</h2>
+        <p>Le Bar Zine relaie des lieux et dates qui font vivre Lausanne hors pilotage automatique : concerts, bars utiles, scènes locales, collectifs, appels et formats moins visibles.</p>
       </div>
       <div class="panel-actions">
         <a href="${escapeHtml(EVENT_CONTRIBUTION_URL)}" target="_blank" rel="noopener">Proposer un event</a>
@@ -728,7 +728,6 @@ function renderAgenda(){
   })).filter(section => section.events.length);
 
   document.getElementById("grid").innerHTML = `
-    ${renderIntroPanel()}
     <section class="agenda-list">
       ${groupedEvents.length ? groupedEvents.map(section => `
         <div class="event-section">
@@ -753,11 +752,15 @@ function renderSupport(){
   document.getElementById("grid").innerHTML = `
     <section class="support-board">
       <div class="support-lead">
-        <p class="kicker">Communauté · contributions · économie claire</p>
-        <h2>Faire vivre le radar.</h2>
-        <p>Le Bar Zine peut grandir par contributions : events proposés, fiches complétées, relais de collectifs, soutiens volontaires et partenariats clairement marqués. Pas de faux avis, pas de classement acheté, pas de pub déguisée.</p>
+        <p class="kicker">Le zine · communauté · méthode</p>
+        <h2>Une ligne, pas un annuaire.</h2>
+        <p>On privilégie les lieux vivants, les scènes locales, les infos sourcées et les plans vraiment utiles. Pas de classement acheté, pas de pub déguisée, pas d'exhaustivité molle.</p>
       </div>
       <div class="support-options">
+        <article class="support-manifesto">
+          <h3>Ce qu'on relaie</h3>
+          <p>Bars accessibles, concerts, manifs, Pride, collectifs, lectures, projections, cantines, appels ouverts et lieux qui participent à la culture lausannoise.</p>
+        </article>
         <article>
           <h3>Proposer un event</h3>
           <p>Concert, projection, manif, lecture, expo, soirée, appel ou format local qui mérite d'être relayé.</p>
@@ -781,7 +784,7 @@ function renderSupport(){
       </div>
     </section>
   `;
-  document.getElementById("sideText").textContent = "Communauté : proposer, corriger, soutenir, relayer.";
+  document.getElementById("sideText").textContent = "Le zine : ligne, contributions, soutien.";
   document.getElementById("sideList").innerHTML = `
     <div class="side-item">Events<em>concerts / manifs / appels</em></div>
     <div class="side-item">Fiches<em>bars / sources / services</em></div>

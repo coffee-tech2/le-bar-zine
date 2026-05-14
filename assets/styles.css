@@ -1434,7 +1434,7 @@ a.event-venue-link:hover{border-color:var(--red);color:var(--red)}
 .support-options{
   display:grid;
   gap:12px;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2,1fr);
 }
 .support-options article{
   border:2px solid var(--ink);
@@ -1442,6 +1442,12 @@ a.event-venue-link:hover{border-color:var(--red);color:var(--red)}
   gap:10px;
   padding:16px;
 }
+.support-options .support-manifesto{
+  background:var(--ink);
+  color:white;
+  grid-column:1 / -1;
+}
+.support-options .support-manifesto p{color:rgba(255,255,255,.78)}
 .support-options h3{
   font-family:Inter,ui-sans-serif,system-ui,sans-serif;
   font-size:24px;
