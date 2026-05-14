@@ -559,6 +559,35 @@ input:focus-visible{
   line-height:1.2;
 }
 .card-fit.muted span{color:var(--muted)}
+.card-signals{
+  display:grid;
+  gap:8px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  margin-top:2px;
+}
+.card-signals div{
+  border-top:1px solid rgba(13,12,10,.28);
+  min-width:0;
+  padding-top:7px;
+}
+.card-signals span{
+  color:var(--red);
+  display:block;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.05em;
+  margin-bottom:4px;
+  text-transform:uppercase;
+}
+.card-signals div:nth-child(2) span{color:var(--muted)}
+.card-signals strong{
+  display:block;
+  font-family:Inter,ui-sans-serif,system-ui,sans-serif;
+  font-size:14px;
+  font-weight:850;
+  line-height:1.15;
+}
 .tags{display:flex;gap:5px;flex-wrap:wrap}
 .card .tags{margin-top:12px}
 .card-open{
@@ -1643,6 +1672,8 @@ a.event-venue-link:hover{border-color:var(--red);color:var(--red)}
   }
   .card-fit{grid-template-columns:76px 1fr;gap:7px}
   .card-fit strong{font-size:13px}
+  .card-signals{grid-template-columns:1fr 1fr}
+  .card-signals strong{font-size:13px}
   .reason{font-size:10px}
   .sections{grid-template-columns:1fr}
   .service-grid{grid-template-columns:repeat(2,1fr)}
@@ -1672,16 +1703,33 @@ a.event-venue-link:hover{border-color:var(--red);color:var(--red)}
 }
 
 @media(max-width:700px){
+  .hero{
+    border-bottom:0;
+    min-height:auto;
+    padding-bottom:14px;
+  }
+  .hero p{
+    max-width:28rem;
+  }
   .sortie-strip{
     display:grid;
     gap:10px;
     grid-template-columns:1fr;
+    margin-top:18px;
     overflow:visible;
     padding:0;
   }
   .sortie-card{
-    min-height:92px;
+    min-height:66px;
+    padding:14px 16px;
     width:100%;
+  }
+  .sortie-strip strong{font-size:19px}
+  .sortie-strip span{font-size:10px;margin-top:4px}
+  .decision{display:none}
+  .controls{
+    border-top:3px solid var(--ink);
+    margin-top:0;
   }
 }
 
@@ -1702,6 +1750,11 @@ a.event-venue-link:hover{border-color:var(--red);color:var(--red)}
   .card-tools{grid-column:2 / 3;grid-row:1;justify-self:end}
   .name{font-size:23px}
   .card-fit{display:none}
+  .card-signals{
+    gap:6px;
+    grid-template-columns:1fr;
+  }
+  .card-signals div:nth-child(2){display:none}
   .tags{gap:4px}
   .tag{font-size:9px;padding:3px 6px}
   .detail-title{font-size:clamp(40px,12vw,80px)}

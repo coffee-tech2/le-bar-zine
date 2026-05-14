@@ -68,7 +68,7 @@ function validateEvents(events){
 let BARS = [];
 let EVENTS = [];
 
-const DATA_VERSION = "20260514-v15";
+const DATA_VERSION = "20260514-v16";
 const CONTRIBUTION_URL = "https://github.com/coffee-tech2/le-bar-zine/issues/new";
 const SUPPORT_URL = "https://github.com/sponsors/coffee-tech2";
 
@@ -481,39 +481,39 @@ function filteredEvents(){
 
 const EVENT_SECTIONS = [
   {
-    key:"dated",
-    title:"Prochaines dates",
-    note:"concerts · fêtes · sorties"
+    key:"week",
+    title:"Cette semaine",
+    note:"à ne pas rater maintenant"
   },
   {
-    key:"queer",
-    title:"Pride / queer",
-    note:"safe spaces · luttes · culture"
+    key:"upcoming",
+    title:"À venir",
+    note:"dates confirmées"
   },
   {
     key:"recurring",
-    title:"Récurrents & lieux à surveiller",
-    note:"autogéré · cantines · chorales"
-  },
-  {
-    key:"calls",
-    title:"Appels & contributions",
-    note:"à compléter avec le terrain"
+    title:"Récurrents",
+    note:"cantines · ateliers · lieux à suivre"
   },
   {
     key:"past",
     title:"Passés récemment",
     note:"archive courte · à renouveler"
+  },
+  {
+    key:"calls",
+    title:"Appels & contributions",
+    note:"à compléter avec le terrain"
   }
 ];
 
 function eventSectionKey(event){
-  const text = eventBlob(event);
-  if(eventTimeState(event).key === "past") return "past";
+  const time = eventTimeState(event);
+  if(time.key === "past") return "past";
   if(event.status === "ouvert" || event.category === "repérage") return "calls";
   if(event.status === "récurrent") return "recurring";
-  if(text.includes("pride") || text.includes("queer") || text.includes("lgbt") || text.includes("fières")) return "queer";
-  return "dated";
+  if(time.key === "now" || time.key === "soon") return "week";
+  return "upcoming";
 }
 
 function barById(id){
@@ -816,16 +816,18 @@ function renderGrid(){
         <div class="card-body">
           <p class="hook">${escapeHtml(barHook(b))}</p>
           ${state.mood ? `<p class="reason">${escapeHtml(recommendationReason(b, state.mood))}</p>` : ''}
-          <div class="card-fit">
-            <span>Bon pour</span>
-            <strong>${escapeHtml((asList(b.decision_for).length ? asList(b.decision_for) : asList(b.best_for)).slice(0,2).join(" · ") || b.guide_note || "sortie simple")}</strong>
-          </div>
-          <div class="card-fit muted">
-            <span>Évite si</span>
-            <strong>${escapeHtml((asList(b.decision_avoid).length ? asList(b.decision_avoid) : asList(b.avoid_if)).slice(0,1).join(" · ") || "rien de bloquant dans la fiche")}</strong>
+          <div class="card-signals">
+            <div>
+              <span>Bon pour</span>
+              <strong>${escapeHtml((asList(b.decision_for).length ? asList(b.decision_for) : asList(b.best_for)).slice(0,1).join("") || b.guide_note || "sortie simple")}</strong>
+            </div>
+            <div>
+              <span>À savoir</span>
+              <strong>${escapeHtml((asList(b.decision_avoid).length ? asList(b.decision_avoid) : asList(b.avoid_if)).slice(0,1).join("") || b.sound || "fiche à ouvrir")}</strong>
+            </div>
           </div>
           <div class="tags">
-            ${asList(b.tags).slice(0,3).map(t=>`<button class="tag tag-clickable" type="button" onclick="window.filterTag('${barRef(t)}',event)" aria-label="Filtrer par ${escapeHtml(t)}">${escapeHtml(t)}</button>`).join("")}
+            ${asList(b.tags).slice(0,2).map(t=>`<button class="tag tag-clickable" type="button" onclick="window.filterTag('${barRef(t)}',event)" aria-label="Filtrer par ${escapeHtml(t)}">${escapeHtml(t)}</button>`).join("")}
             ${isTerrace(b)?'<button class="tag tag-clickable" type="button" onclick="window.filterTag(\'terrasse\',event)" aria-label="Filtrer par terrasse">terrasse ✓</button>':''}
           </div>
           <div class="card-open">Ouvrir la fiche →</div>
